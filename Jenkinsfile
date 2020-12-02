@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 script {
-                    withCredentials([string(credentialsId: 'sas-judo-backend-test', variable: 'TEST_CREDENTIALS')]) {
+                    withCredentials([string(credentialsId: 'chartman2-test-key', variable: 'TEST_CREDENTIALS')]) {
                         sh('''
                             source /usr/local/rvm/scripts/rvm
                             rvm use 2.7.2
