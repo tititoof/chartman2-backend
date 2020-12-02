@@ -32,7 +32,7 @@ pipeline {
                             RAILS_ENV=test bundle exec rspec spec/* --format html --out rspec_results/results.html --format RspecJunitFormatter --out rspec_results/results.xml
                         ''')
                         try {
-                            sh "bundle exec rubocop app spec --format json --out rubocop.json"
+                            sh "source /usr/local/rvm/scripts/rvm && bundle exec rubocop app spec --format json --out rubocop.json"
                         } catch (err) {
                             echo "Rubocop error "
                             echo err.getMessage()
