@@ -13,7 +13,6 @@ pipeline {
                         ruby -v
                         gem -v
                         gem install bundler
-                        gem install rubocop
                     ''')
                 }
             }
@@ -33,7 +32,7 @@ pipeline {
                             RAILS_ENV=test bundle exec rspec spec/* --format html --out rspec_results/results.html --format RspecJunitFormatter --out rspec_results/results.xml
                         ''')
                         try {
-                            sh "rubocop app spec --format json --out rubocop.json"
+                            sh "bundle exec rubocop app spec --format json --out rubocop.json"
                         } catch (err) {
                             echo "Rubocop error "
                             echo err.getMessage()
