@@ -230,6 +230,7 @@ DEPENDENCIES
   rspec
   rspec-rails
   rspec_junit_formatter
+  rubocop
   rubocop-rails
   shoulda-matchers
   simplecov
