@@ -25,6 +25,7 @@ pipeline {
                         sh('''
                             source /usr/local/rvm/scripts/rvm
                             rvm use 2.7.2
+                            gem install rubocop
                             bundle install
                             echo "$TEST_CREDENTIALS" > config/credentials/test.key
                             RAILS_ENV=test bundle exec rake db:create
