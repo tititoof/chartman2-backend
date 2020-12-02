@@ -61,6 +61,7 @@ pipeline {
                                 -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.json \
                                 -Dsonar.login=615c4c5e3d1c65318d4e57f2f5a9e9796044aca2"
                     }
+                    echo 'Finished QonarQube!'
                 }
             }
         }
