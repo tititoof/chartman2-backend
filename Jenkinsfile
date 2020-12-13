@@ -32,8 +32,10 @@ pipeline {
                             RAILS_ENV=test bundle exec rspec spec/* --format html --out rspec_results/results.html --format RspecJunitFormatter --out rspec_results/results.xml
                         ''')
                         try {
-                            sh """source /usr/local/rvm/scripts/rvm 
-                                bundle exec rubocop app spec --format json --out rubocop.json"""
+                            sh """source /usr/local/rvm/scripts/rvm
+                                rvm use 2.7.2
+                                gem install rubocop
+                                bundle exec rubocop app spec --format json --out rubocop-result.json"""
                         } catch (err) {
                             echo "Rubocop error "
                             echo err.getMessage()
@@ -57,9 +59,11 @@ pipeline {
                                 -Dsonar.projectKey=$sonarqubeBranch \
                                 -Dsonar.sources='app, config, db, lib' \
                                 -Dsonar.exclusions=app/assets/**/* \
-                                -Dsonar.host.url=http://192.168.1.62:9080 \
+                                -Dsonar.host.url=http://192.168.1.204:9080 \
                                 -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.json \
-                                -Dsonar.login=615c4c5e3d1c65318d4e57f2f5a9e9796044aca2"
+                                -Dsonar.ruby.coverage.framework=RSpec \
+                                -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
+                                -Dsonar.login=dd720dccbf88391235e748c560c2be46672928c8"
                     }
                 }
             }
