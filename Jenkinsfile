@@ -57,7 +57,7 @@ pipeline {
                                 -Dsonar.projectKey=$sonarqubeBranch \
                                 -Dsonar.sources='app, config, db, lib' \
                                 -Dsonar.exclusions=app/assets/**/* \
-                                -Dsonar.host.url=http://192.168.1.62:9080 \
+                                -Dsonar.host.url=http://192.168.1.204:9080 \
                                 -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.json \
                                 -Dsonar.login=dd720dccbf88391235e748c560c2be46672928c8"
                     }
