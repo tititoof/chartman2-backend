@@ -59,7 +59,7 @@ pipeline {
                                 -Dsonar.exclusions=app/assets/**/* \
                                 -Dsonar.host.url=http://192.168.1.62:9080 \
                                 -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.json \
-                                -Dsonar.login=615c4c5e3d1c65318d4e57f2f5a9e9796044aca2"
+                                -Dsonar.login=dd720dccbf88391235e748c560c2be46672928c8"
                     }
                 }
             }
