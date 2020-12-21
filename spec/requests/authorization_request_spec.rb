@@ -14,8 +14,6 @@ RSpec.describe 'Authorization', type: :request do
     expect(response.has_header?('access-token')).to eq(true)
   end
 
-  it 'gives you a wrong authentication code withou'
-
   def login
     post user_session_path, 
          params: { email: @current_user.email, password: 'password' }.to_json,

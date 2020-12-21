@@ -47,6 +47,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   # Code coverage
   gem 'simplecov'
+  gem 'simplecov-json'
 end
 
 group :development do
