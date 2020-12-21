@@ -57,9 +57,11 @@ pipeline {
                         }
                         sh "${tool("sonarscanner")}/bin/sonar-scanner \
                                 -Dsonar.projectKey=$sonarqubeBranch \
-                                -Dsonar.sources='./' \
+                                -Dsonar.sources='.' \
                                 -Dsonar.exclusions=app/assets/**/* \
                                 -Dsonar.host.url=http://192.168.1.204:9080 \
+                                -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.json
+                                -Dsonar.ruby.coverage.framework=RSpec \
                                 -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
                                 -Dsonar.login=dd720dccbf88391235e748c560c2be46672928c8"
                     }
