@@ -58,7 +58,7 @@ pipeline {
                         }
                         sh "${tool("sonarscanner")}/bin/sonar-scanner \
                                 -Dsonar.projectKey=$sonarqubeBranch \
-                                -Dsonar.sources='.' \
+                                -Dsonar.sources='app, lib' \
                                 -Dsonar.exclusions=app/assets/**/* \
                                 -Dsonar.host.url=http://192.168.1.204:9080 \
                                 -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.solarqube.json \
