@@ -36,7 +36,7 @@ group :development, :test do
   # Rspec TDD
   gem 'rspec-rails'
   # Create entities
-  gem 'factory_bot'
+  gem "factory_bot_rails"
   # Fake entities creation
   gem 'faker'
   # Clean database before testing
