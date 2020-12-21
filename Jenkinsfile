@@ -30,6 +30,7 @@ pipeline {
                             RAILS_ENV=test bundle exec rake db:create
                             RAILS_ENV=test bundle exec rake db:migrate
                             RAILS_ENV=test bundle exec rspec spec/* --format html --out rspec_results/results.html --format RspecJunitFormatter --out rspec_results/results.xml
+                            ruby -rjson -e 'sqube = JSON.load(File.read("coverage/.resultset.json"))["RSpec"]["coverage"].transform_values {|lines| lines["lines"]}; total = { "RSpec" => { "coverage" => sqube, "timestamp" => Time.now.to_i }}; puts JSON.dump(total)' > coverage/.resultset.solarqube.json
                         ''')
                         try {
                             sh """source /usr/local/rvm/scripts/rvm
@@ -60,7 +61,7 @@ pipeline {
                                 -Dsonar.sources='.' \
                                 -Dsonar.exclusions=app/assets/**/* \
                                 -Dsonar.host.url=http://192.168.1.204:9080 \
-                                -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.json \
+                                -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.solarqube.json \
                                 -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
                                 -Dsonar.login=dd720dccbf88391235e748c560c2be46672928c8"
                     }
