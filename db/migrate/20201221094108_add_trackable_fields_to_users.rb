@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Add trackable fields to users
 class AddTrackableFieldsToUsers < ActiveRecord::Migration[6.0]
   def change

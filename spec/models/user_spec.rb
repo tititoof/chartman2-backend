@@ -28,4 +28,8 @@ RSpec.describe User, type: :model do
     subject.password = nil
     expect(subject).to_not be_valid
   end
+
+  it { should allow_value('user@example.com').for(:email) }
+  it { should_not allow_value('not-an-email').for(:email) }
+  it { should have_many(:posts) }
 end

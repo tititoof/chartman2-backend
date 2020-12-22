@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 include ActionController::RespondWith
 
@@ -15,7 +17,7 @@ RSpec.describe 'Authorization', type: :request do
   end
 
   def login
-    post user_session_path, 
+    post user_session_path,
          params: { email: @current_user.email, password: 'password' }.to_json,
          headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
   end
