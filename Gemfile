@@ -23,8 +23,12 @@ gem 'puma', '~> 4.1'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 gem 'rubocop-rails', require: false
+
+# Authenticate
+gem 'devise'
+gem 'devise_token_auth'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -32,7 +36,7 @@ group :development, :test do
   # Rspec TDD
   gem 'rspec-rails'
   # Create entities
-  gem 'factory_bot'
+  gem "factory_bot_rails"
   # Fake entities creation
   gem 'faker'
   # Clean database before testing
@@ -43,6 +47,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   # Code coverage
   gem 'simplecov'
+  gem 'simplecov-json'
 end
 
 group :development do

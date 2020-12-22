@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec" tests="5" skipped="0" failures="0" errors="0" time="1.761382" timestamp="2020-12-21T19:02:05+01:00" hostname="tititoof.lan">
+<properties>
+<property name="seed" value="35204"/>
+</properties>
+<testcase classname="spec.models.user_spec" name="User is valid with valid attributes" file="./spec/models/user_spec.rb" time="0.277267"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without a name" file="./spec/models/user_spec.rb" time="0.467613"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without an email" file="./spec/models/user_spec.rb" time="0.221820"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without a password" file="./spec/models/user_spec.rb" time="0.229859"></testcase>
+<testcase classname="spec.requests.authorization_request_spec" name="Authorization gives you an authentication code if you are an existing user and you satisfy the password" file="./spec/requests/authorization_request_spec.rb" time="0.560376"></testcase>
+</testsuite>
