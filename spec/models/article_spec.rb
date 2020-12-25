@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   describe 'associations' do
-    it { should belong_to(:category) }
-    it { should belong_to(:post) }
+    it { is_expected.to belong_to(:category) }
+    it { is_expected.to belong_to(:post) }
   end
 end

@@ -18,15 +18,15 @@ RSpec.describe Post, type: :model do
 
   it 'is not valid without title' do
     subject.title = nil
-    expect(subject).to_not be_valid
+    expect(subject).not_to be_valid
   end
 
   it 'is not valid without content' do
     subject.content = nil
-    expect(subject).to_not be_valid
+    expect(subject).not_to be_valid
   end
 
-  it { should belong_to(:user) }
+  it { is_expected.to belong_to(:user) }
 
-  it { should have_many(:categories) }
+  it { is_expected.to have_many(:categories) }
 end

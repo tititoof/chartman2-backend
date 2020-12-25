@@ -15,6 +15,6 @@ RSpec.describe Category, type: :model do
 
   it 'is not valid without a name' do
     subject.name = nil
-    expect(subject).to_not be_valid
+    expect(subject).not_to be_valid
   end
 end

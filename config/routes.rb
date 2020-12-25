@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   scope constraints: { format: 'json' } do
     resources :categories
     resources :posts
+    resources :users
   end
 end
