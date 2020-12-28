@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-include ActionController::RespondWith
 
 # The authentication header looks something like this:
 # {"access-token"=>"abcd1dMVlvW2BT67xIAS_A", "token-type"=>"Bearer", "client"=>"LSJEVZ7Pq6DX5LXvOWMq1w", "expiry"=>"1519086891", "uid"=>"darnell@konopelski.info"}
 RSpec.describe 'Authorization', type: :request do
+  include ActionController::RespondWith
+
   before do
     @current_user = FactoryBot.create(:user)
   end

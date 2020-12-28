@@ -2,12 +2,20 @@
 
 # Manage categories
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     render json: PostSerializer.new(Post.all)
   end
 
   def create
-    @post = PostCreator.new(posts_params[:title], posts_params[:content], posts_params[:user_id]).execute
+    @post = PostCreator.new(
+      posts_params[:title],
+      posts_params[:description],
+      posts_params[:content],
+      posts_params[:categories],
+      current_user
+    ).execute
     render_json
   end
 
@@ -16,7 +24,14 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = PostUpdater.new(posts_params[:id], posts_params[:title], posts_params[:content], posts_params[:user_id]).execute
+    @post = PostUpdater.new(
+      posts_params[:id],
+      posts_params[:title],
+      posts_params[:description],
+      posts_params[:content],
+      posts_params[:categories],
+      current_user
+    ).execute
     render_json
   end
 
@@ -35,6 +50,13 @@ class PostsController < ApplicationController
   end
 
   def posts_params
-    params.permit(:id, :title, :content, :user_id)
+    params.permit(
+      :id,
+      :title,
+      :description,
+      :content,
+      :user_id,
+      categories: []
+    )
   end
 end

@@ -2,17 +2,22 @@
 
 # Create a post
 class PostCreator
-  attr_reader :title, :content, :user
+  attr_reader :title, :description, :content, :categories_ids, :user
 
-  def initialize(title, content, user_id)
+  def initialize(title, description, content, categories_ids, user)
     @title = title
+    @description = description
     @content = content
-    @user = User.find(user_id)
+    @categories_ids = categories_ids
+    @user = user
   end
 
   def execute
-    post = Post.create(title: @title, content: @content, user: @user)
-    post.save
-    post
+    @post = Post.create(title: @title, description: @description, content: @content, user: @user)
+
+    PostCategoriesAdder.new(@post, @categories_ids).execute if @post.valid?
+
+    @post.save
+    @post
   end
 end

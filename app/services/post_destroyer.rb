@@ -10,6 +10,7 @@ class PostDestroyer
 
   def execute
     post = Post.find(@post_id)
+    post.articles.each(&:destroy)
     post.destroy
   end
 end

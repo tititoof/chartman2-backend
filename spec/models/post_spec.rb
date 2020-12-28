@@ -6,9 +6,11 @@ RSpec.describe Post, type: :model do
   subject do
     described_class.new(
       title: 'test post title',
+      description: 'test description',
       content: 'this is a long content',
       published_at: '2020-12-01',
-      user: User.new
+      user: User.new,
+      categories: [FactoryBot.create(:category)]
     )
   end
 

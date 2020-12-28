@@ -2,7 +2,7 @@
 
 class PostSerializer
   include JSONAPI::Serializer
-  attributes :title, :content
+  attributes :title, :description, :content
 
   belongs_to :user
   has_many :categories

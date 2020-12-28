@@ -2,19 +2,24 @@
 
 # Update a post
 class PostUpdater
-  attr_reader :post_id, :title, :content, :user
+  attr_reader :title, :description, :content, :categories_ids, :user
 
-  def initialize(post_id, title, content, user_id)
+  def initialize(post_id, title, description, content, categories_ids, user)
     @post_id = post_id
     @title = title
+    @description = description
     @content = content
-    @user = User.find(user_id)
+    @categories_ids = categories_ids
+    @user = user
   end
 
   def execute
-    post = Post.find(@post_id)
-    post.update(title: @title, content: @content, user: @user)
-    post.save
-    post
+    @post = Post.find(@post_id)
+    @post.update(title: @title, description: @description, content: @content, user: @user)
+
+    PostCategoriesAdder.new(@post, @categories_ids).execute if @post.valid?
+
+    @post.save
+    @post
   end
 end

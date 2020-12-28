@@ -5,16 +5,23 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   include ActionController::RespondWith
 
+  before do
+    @current_user = User.new(name: 'Test user name', email: 'toto@toto.fr', password: 'password', admin: true)
+    @current_user.save
+    login
+    @auth_tokens = get_auth_params_from_login_response_headers(response)
+  end
+
   it 'get all posts from index' do
-    get posts_path
+    get posts_path, headers: @auth_tokens
 
     expect(response.status).to eq(200)
   end
 
   it 'create a post' do
-    user = FactoryBot.create(:user)
-    post = { title: 'test', content: 'gnagnagna', user_id: user.id }
-    post posts_path, params: post
+    category = FactoryBot.create(:category)
+    post = { title: 'test', description: 'petite description', content: 'gnagnagna', categories: [category.id] }
+    post posts_path, params: post, headers: @auth_tokens
 
     expect(response.status).to eq(200)
     expect(response).to match_response_schema('post')
@@ -22,7 +29,7 @@ RSpec.describe 'Posts', type: :request do
 
   it 'show a post' do
     new_post = FactoryBot.create(:post)
-    get post_path(new_post.id)
+    get post_path(new_post.id), headers: @auth_tokens
 
     expect(response.status).to eq(200)
     expect(response).to match_response_schema('post')
@@ -31,7 +38,14 @@ RSpec.describe 'Posts', type: :request do
   it 'update a post' do
     new_post = FactoryBot.create(:post)
     new_post.title = "#{new_post.title} changed"
-    put post_path(new_post.id), params: { title: new_post.title, content: new_post.content, user_id: new_post.user.id }
+    put post_path(new_post.id),
+        params: {
+          title: new_post.title,
+          description: new_post.description,
+          content: new_post.content,
+          categories: [new_post.categories.collect(&:id).join(',')]
+        },
+        headers: @auth_tokens
     current_post = response_body['data']
 
     expect(response.status).to eq(200)
@@ -43,7 +57,7 @@ RSpec.describe 'Posts', type: :request do
     post_to_destroy = FactoryBot.create(:post)
 
     expect do
-      delete post_path(post_to_destroy)
+      delete post_path(post_to_destroy), headers: @auth_tokens
     end.to change(Post, :count).by(-1)
     expect(response.status).to eq(200)
   end
