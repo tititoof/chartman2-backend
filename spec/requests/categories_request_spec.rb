@@ -11,7 +11,7 @@ RSpec.describe 'Categories', type: :request do
     expect(response.status).to eq(200)
   end
 
-  it 'create a category' do
+  it 'create' do
     category = { name: 'test' }
     post categories_path, params: category
 
@@ -19,7 +19,14 @@ RSpec.describe 'Categories', type: :request do
     expect(response).to match_response_schema('category')
   end
 
-  it 'show a category' do
+  it 'not create with wrong parameter' do
+    category = {}
+    post categories_path, params: category
+
+    expect(response.status).to eq(412)
+  end
+
+  it 'show' do
     new_category = FactoryBot.create(:category)
     get category_path(new_category.id)
 
@@ -27,7 +34,7 @@ RSpec.describe 'Categories', type: :request do
     expect(response).to match_response_schema('category')
   end
 
-  it 'update a category' do
+  it 'update' do
     new_category = FactoryBot.create(:category)
     new_category.name = "#{new_category.name} changed"
     put category_path(new_category.id), params: { name: new_category.name }
@@ -38,7 +45,7 @@ RSpec.describe 'Categories', type: :request do
     expect(current_category['attributes']['name']).to eq new_category.name
   end
 
-  it 'destroy a category' do
+  it 'destroy' do
     category_to_destroy = FactoryBot.create(:category)
 
     expect do
