@@ -10,8 +10,9 @@ class PostCategoriesAdder
   end
 
   def execute
-    categories = []
+    return if @categories_ids.nil?
 
+    categories = []
     @categories_ids.each do |category_id|
       category = Category.find(category_id)
       categories << category

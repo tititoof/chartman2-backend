@@ -27,8 +27,9 @@ RSpec.describe 'Posts', type: :request do
     expect(response).to match_response_schema('post')
   end
 
-  it 'not create a post without categories' do
-    post = { title: 'test', description: 'petite description', content: 'gnagnagna' }
+  it 'not create a post with wrong parameter' do
+    category = FactoryBot.create(:category)
+    post = { title: 'test', content: 'gnagnagna', categories: [category.id] }
     post posts_path, params: post, headers: @auth_tokens
 
     expect(response.status).to eq(412)
