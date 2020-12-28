@@ -27,6 +27,13 @@ RSpec.describe 'Posts', type: :request do
     expect(response).to match_response_schema('post')
   end
 
+  it 'not create a post without categories' do
+    post = { title: 'test', description: 'petite description', content: 'gnagnagna' }
+    post posts_path, params: post, headers: @auth_tokens
+
+    expect(response.status).to eq(412)
+  end
+
   it 'show a post' do
     new_post = FactoryBot.create(:post)
     get post_path(new_post.id), headers: @auth_tokens
