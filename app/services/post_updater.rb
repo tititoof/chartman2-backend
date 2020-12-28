@@ -4,12 +4,12 @@
 class PostUpdater
   attr_reader :title, :description, :content, :categories_ids, :user
 
-  def initialize(post_id, title, description, content, categories_ids, user)
-    @post_id = post_id
-    @title = title
-    @description = description
-    @content = content
-    @categories_ids = categories_ids
+  def initialize(user, params)
+    @post_id = params[:id]
+    @title = params[:title]
+    @description = params[:description]
+    @content = params[:content]
+    @categories_ids = params[:categories_ids]
     @user = user
   end
 

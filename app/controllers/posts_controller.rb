@@ -25,13 +25,13 @@ class PostsController < ApplicationController
 
   def update
     @post = PostUpdater.new(
-      posts_params[:id],
-      posts_params[:title],
-      posts_params[:description],
-      posts_params[:content],
-      posts_params[:categories],
-      current_user
-    ).execute
+      current_user, {
+        id: posts_params[:id],
+        title: posts_params[:title],
+        description: posts_params[:description],
+        content: posts_params[:content],
+        categories: posts_params[:categories]
+    }).execute
     render_json
   end
 
