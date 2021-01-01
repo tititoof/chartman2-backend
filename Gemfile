@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -23,16 +25,24 @@ gem 'puma', '~> 4.1'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 gem 'rubocop-rails', require: false
+gem 'rubocop-rspec', require: false
+
+# Authenticate
+gem 'devise'
+gem 'devise_token_auth'
+
+# Serializer
+gem 'jsonapi-serializer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Rspec TDD
   gem 'rspec-rails'
   # Create entities
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   # Fake entities creation
   gem 'faker'
   # Clean database before testing
@@ -43,6 +53,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   # Code coverage
   gem 'simplecov'
+  gem 'simplecov-json'
 end
 
 group :development do
@@ -55,9 +66,9 @@ group :development do
 end
 
 group :test do
-  gem "rspec"
-  gem "rspec_junit_formatter"
+  gem 'rspec'
+  gem 'rspec_junit_formatter'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
