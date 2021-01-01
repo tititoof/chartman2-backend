@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   include DeviseTokenAuth::Concerns::User
 
+  has_many :posts
   validates_presence_of :name
+  validates_presence_of :email
   validates_uniqueness_of :email
+
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 end
