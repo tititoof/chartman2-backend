@@ -14,7 +14,7 @@ pipeline {
                             source ~/.rvm/scripts/rvm
                             rvm install 2.7.2
                         else
-                            source ~/.rvm/scripts/rvm
+                            source ~/.rvm/scripts/rvm &> /dev/null
                         fi
                         rvm use 2.7.2
                         rvm -v
