@@ -7,8 +7,7 @@ pipeline {
                 echo 'Checking..'
                 script {
                     sh('''
-                        if test -f "~/.rvm/script/rvm"
-                        then
+                        if [-f "~/.rvm/script/rvm"]; then
                             source ~/.rvm/scripts/rvm
                         else
                             echo "rvm not installed"
