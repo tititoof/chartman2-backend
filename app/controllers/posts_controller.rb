@@ -31,7 +31,8 @@ class PostsController < ApplicationController
         description: posts_params[:description],
         content: posts_params[:content],
         categories: posts_params[:categories]
-    }).execute
+      }
+    ).execute
     render_json
   end
 

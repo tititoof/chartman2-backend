@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Articles', type: :request do
-
   it 'show articles' do
     category = FactoryBot.create(:category)
     get "/articles/#{category.id}"

@@ -2,6 +2,8 @@
 
 # Manage categories
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
+
   # list categories
   def index
     render json: CategorySerializer.new(Category.all)

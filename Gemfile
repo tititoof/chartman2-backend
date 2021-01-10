@@ -7,6 +7,7 @@ ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -31,7 +32,7 @@ gem 'rubocop-rspec', require: false
 
 # Authenticate
 gem 'devise'
-gem 'devise_token_auth'
+gem 'devise_token_auth', '~> 1.1.4'
 
 # Serializer
 gem 'jsonapi-serializer'
