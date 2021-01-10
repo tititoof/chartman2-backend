@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Check OS') {
             steps {
-                echo 'Building..'
+                echo 'Checking..'
                 script {
                     sh('''
                         if ! command -v rvm &> /dev/null
@@ -13,9 +13,21 @@ pipeline {
                             curl -sSL https://get.rvm.io | bash -s stable
                             source ~/.rvm/scripts/rvm
                             rvm install 2.7.2
-                        else
-                            source ~/.rvm/scripts/rvm &> /dev/null
                         fi
+                        if ! command -v sudo &> /dev/null
+                        then
+                            apt-get install sudo -y
+                        fi
+                    ''')
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                script {
+                    sh('''
+                        source ~/.rvm/scripts/rvm &> /dev/null
                         rvm use 2.7.2
                         rvm -v
                         ruby -v
