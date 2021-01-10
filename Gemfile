@@ -32,7 +32,7 @@ gem 'rubocop-rspec', require: false
 
 # Authenticate
 gem 'devise'
-gem 'devise_token_auth', '~> 1.1.4'
+gem 'devise_token_auth'
 
 # Serializer
 gem 'jsonapi-serializer'
