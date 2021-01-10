@@ -255,7 +255,7 @@ DEPENDENCIES
   byebug
   database_cleaner-active_record
   devise
-  devise_token_auth (~> 1.1.4)
+  devise_token_auth
   factory_bot_rails
   faker
   json-schema
