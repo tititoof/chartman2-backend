@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     resources :posts
     resources :users
     get '/visitors/articles/:category_id', to: 'visitors#articles'
+    get '/visitors/article/:article_id', to: 'visitors#article'
     get '/visitors/categories', to: 'visitors#categories'
     get '/visitors/category/:category_id', to: 'visitors#category'
-    get '/visitors/article/:article_id', to: 'visitors#article'
   end
 end
