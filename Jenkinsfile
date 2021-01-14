@@ -44,7 +44,7 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'chartman2-test-key', variable: 'TEST_CREDENTIALS')]) {
                         sh('''
-                            source /usr/local/rvm/scripts/rvm
+                            . ~/.rvm/scripts/rvm &> /dev/null
                             rvm use 2.7.2
                             gem cleanup
                             bundle install
@@ -55,7 +55,7 @@ pipeline {
                             ruby -rjson -e 'sqube = JSON.load(File.read("coverage/.resultset.json"))["RSpec"]["coverage"].transform_values {|lines| lines["lines"]}; total = { "RSpec" => { "coverage" => sqube, "timestamp" => Time.now.to_i }}; puts JSON.dump(total)' > coverage/.resultset.solarqube.json
                         ''')
                         try {
-                            sh """source /usr/local/rvm/scripts/rvm
+                            sh """. ~/.rvm/scripts/rvm &> /dev/null
                                 rvm use 2.7.2
                                 gem install rubocop
                                 bundle exec rubocop app spec --format json --out rubocop-result.json"""
