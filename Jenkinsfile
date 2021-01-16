@@ -1,6 +1,7 @@
 pipeline {
-    agent agent_rails_elminster
-
+    agent node {
+        label 'agent_rails_elminster'
+    }
     stages {
         // stage('Check OS') {
         //     steps {
