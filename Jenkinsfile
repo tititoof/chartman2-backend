@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent agent_rails_elminster
 
     stages {
         // stage('Check OS') {
