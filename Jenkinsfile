@@ -89,17 +89,18 @@ pipeline {
         stage('Update github') {
             steps {
                 script {
+                    GITHUB_CREDS = credentials('github-tititoof')
+
                     withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-github', keyFileVariable: 'github-ssh', passphraseVariable: '', usernameVariable: 'github-user')]) {
                         def githubBranch = env.BRANCH_NAME;
                         sh '''
                             if git remote | grep github > /dev/null; then
-                                echo 'remote exist'                          
-                            else
-                                git remote add github https://github.com/tititoof/chartman2-backend.git
+                                git remote rm github
                             fi
+                            git remote add github https://${GITHUB_CREDS_USR}:${GITHUB_CREDS_PSW}@github.com/tititoof/chartman2-backend.git
                         '''
                         try {
-                            sh "git pull github $githubBranch"
+                            sh "git pull github"
                             sh "git push -u github $githubBranch"
                         } catch (err) {
                             echo "github error "
