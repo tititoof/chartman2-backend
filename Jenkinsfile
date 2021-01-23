@@ -99,12 +99,12 @@ pipeline {
                             fi
                         '''
                         try {
-                            sh "git push -u github $githubBranch"
+                            sh "git push -u github $githubBranch:$githubBranch"
                         } catch (err) {
                             echo "github error "
                             echo err.getMessage()
                         }
-                        sh "git push --force github $githubBranch"
+                        sh "git push --force github $githubBranch:$githubBranch"
                         
                     }
                     echo 'Github finished'
