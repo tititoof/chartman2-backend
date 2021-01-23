@@ -4,6 +4,9 @@ pipeline {
             label 'agent_rails_elminster'
         }
     }
+    environment {
+        GITHUB_CREDS = credentials('github-tititoof')
+    }
     stages {
         stage('Build') {
             steps {
@@ -88,9 +91,7 @@ pipeline {
         }
         stage('Update github') {
             steps {
-                environment {
-                    GITHUB_CREDS = credentials('github-tititoof')
-                }
+                
                 script {
                     withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-github', keyFileVariable: 'github-ssh', passphraseVariable: '', usernameVariable: 'github-user')]) {
                         def githubBranch = env.BRANCH_NAME;
