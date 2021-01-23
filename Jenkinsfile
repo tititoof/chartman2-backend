@@ -100,9 +100,9 @@ pipeline {
                         '''
                         sh """
                             if git ls-remote --heads github $githubBranch ; then
-                                echo 'remote exist'
-                            else
                                 git push -u github $githubBranch
+                            else
+                                echo 'remote branch exist'
                             fi
                         """
                         sh "git push --force github $githubBranch"
