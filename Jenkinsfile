@@ -99,7 +99,7 @@ pipeline {
                             fi
                         '''
                         try {
-                            sh "git pull"
+                            sh "git pull github"
                             sh "git push -u github $githubBranch"
                         } catch (err) {
                             echo "github error "
