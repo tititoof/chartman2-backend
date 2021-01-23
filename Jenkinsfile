@@ -5,33 +5,13 @@ pipeline {
         }
     }
     stages {
-        // stage('Check OS') {
-        //     steps {
-        //         echo 'Checking..'
-        //         script {
-        //             sh('''
-        //                 if test -f "~/.rvm/script/rvm"; then
-        //                     . ~/.rvm/scripts/rvm
-        //                 else
-        //                     echo "rvm not installed"
-        //                 fi
-        //                 if ! command -v rvm &> /dev/null
-        //                 then
-        //                     gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-        //                     curl -sSL https://get.rvm.io | bash -s stable --autolibs=read-fail
-        //                     . ~/.rvm/scripts/rvm
-        //                     rvm install 2.7.2
-        //                 fi
-        //             ''')
-        //         }
-        //     }
-        // }
         stage('Build') {
             steps {
                 echo 'Building..'
                 script {
                     sh('''
                         . ~/.rvm/scripts/rvm &> /dev/null
+                        rvm install 2.7.2
                         rvm use 2.7.2
                         rvm -v
                         ruby -v
@@ -106,9 +86,16 @@ pipeline {
                 }
             }
         }
-        stage('Test close') {
+        stage('Update github') {
             steps {
-                echo 'close....'
+                withCredentials([string(credentialsId: 'jenkins-github', variable: 'GITHUB_CREDENTIALS')]) {
+                    def githubBranch = env.BRANCH_NAME;
+                    sh("""
+                        git remote add github https://github.com/tititoof/chartman2-backend.git
+                        git push -u github $githubBranch
+                    """)
+                }
+                echo 'Github finished'
             }
         }
         stage('Deploy') {
