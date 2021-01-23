@@ -88,9 +88,10 @@ pipeline {
         }
         stage('Update github') {
             steps {
-                script {
+                environment {
                     GITHUB_CREDS = credentials('github-tititoof')
-
+                }
+                script {
                     withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-github', keyFileVariable: 'github-ssh', passphraseVariable: '', usernameVariable: 'github-user')]) {
                         def githubBranch = env.BRANCH_NAME;
                         sh '''
