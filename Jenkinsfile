@@ -89,7 +89,7 @@ pipeline {
         stage('Update github') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'jenkins-github', variable: 'GITHUB_CREDENTIALS')]) {
+                    withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-github', keyFileVariable: 'github-ssh', passphraseVariable: '', usernameVariable: 'github-user')]) {
                         def githubBranch = env.BRANCH_NAME;
                         sh("""
                             git remote add github https://github.com/tititoof/chartman2-backend.git
