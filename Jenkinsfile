@@ -98,13 +98,18 @@ pipeline {
                                 git remote add github https://github.com/tititoof/chartman2-backend.git
                             fi
                         '''
-                        sh """
-                            if git ls-remote --heads github $githubBranch ; then
-                                git push -u github $githubBranch
-                            else
-                                echo 'remote branch exist'
-                            fi
-                        """
+                        try {
+                            sh "git push -u github $githubBranch"
+                            //     if git ls-remote --heads github $githubBranch > /dev/null; then
+                            //         git push -u github $githubBranch
+                            //     else
+                            //         echo 'remote branch exist'
+                            //     fi
+                            // """
+                        } catch (err) {
+                            echo "github error "
+                            echo err.getMessage()
+                        }
                         sh "git push --force github $githubBranch"
                         
                     }
