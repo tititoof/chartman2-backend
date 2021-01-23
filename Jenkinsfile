@@ -88,14 +88,16 @@ pipeline {
         }
         stage('Update github') {
             steps {
-                withCredentials([string(credentialsId: 'jenkins-github', variable: 'GITHUB_CREDENTIALS')]) {
-                    def githubBranch = env.BRANCH_NAME;
-                    sh("""
-                        git remote add github https://github.com/tititoof/chartman2-backend.git
-                        git push -u github $githubBranch
-                    """)
+                script {
+                    withCredentials([string(credentialsId: 'jenkins-github', variable: 'GITHUB_CREDENTIALS')]) {
+                        def githubBranch = env.BRANCH_NAME;
+                        sh("""
+                            git remote add github https://github.com/tititoof/chartman2-backend.git
+                            git push -u github $githubBranch
+                        """)
+                    }
+                    echo 'Github finished'
                 }
-                echo 'Github finished'
             }
         }
         stage('Deploy') {
