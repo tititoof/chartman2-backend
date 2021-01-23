@@ -93,15 +93,16 @@ pipeline {
             steps {
                 
                 script {
-                    withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-github', keyFileVariable: 'github-ssh', passphraseVariable: '', usernameVariable: 'github-user')]) {
+                    withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_CREDENTIALS')]) {
                         def githubBranch = env.BRANCH_NAME;
                         sh '''
                             if git remote | grep github > /dev/null; then
                                 git remote rm github
                             fi
-                            git remote add github https://${GITHUB_CREDS_USR}:${GITHUB_CREDS_PSW}@github.com/tititoof/chartman2-backend.git
+                            git remote add github https://$TEST_CREDENTIALS@github.com/${GITHUB_CREDS_USR}/chartman2-backend.git
                         '''
                         try {
+                            
                             sh "git pull github"
                             sh "git push -u github $githubBranch"
                         } catch (err) {
