@@ -92,8 +92,7 @@ pipeline {
                     withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-github', keyFileVariable: 'github-ssh', passphraseVariable: '', usernameVariable: 'github-user')]) {
                         def githubBranch = env.BRANCH_NAME;
                         sh '''
-                            git ls-remote --exit-code github
-                            if test $? = 0; then
+                            if git remote | grep faraway > /dev/null; then
                                 git remote add github https://github.com/tititoof/chartman2-backend.git
                             fi
                         '''
