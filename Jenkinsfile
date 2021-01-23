@@ -100,12 +100,6 @@ pipeline {
                         '''
                         try {
                             sh "git push -u github $githubBranch"
-                            //     if git ls-remote --heads github $githubBranch > /dev/null; then
-                            //         git push -u github $githubBranch
-                            //     else
-                            //         echo 'remote branch exist'
-                            //     fi
-                            // """
                         } catch (err) {
                             echo "github error "
                             echo err.getMessage()
