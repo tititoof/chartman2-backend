@@ -93,7 +93,7 @@ pipeline {
                         def githubBranch = env.BRANCH_NAME;
                         sh("""
                             git remote add github https://github.com/tititoof/chartman2-backend.git
-                            git push -u github $githubBranch
+                            git push --force github $githubBranch
                         """)
                     }
                     echo 'Github finished'
