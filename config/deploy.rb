@@ -58,4 +58,4 @@ set :assets_roles, [:web, :app]
 
 # Shared files
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
-append :linked_files, 'config/database.yml', 'config/secrets.yml'
+append :linked_files, 'config/database.yml'
