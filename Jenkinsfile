@@ -132,10 +132,11 @@ pipeline {
                         echo 'Deploying....'
                         withCredentials([file(credentialsId: capistrano-chartman2-backend, variable: 'deployment-file')]) {
                             writeFile file: 'config/deploy/production.rb', text: readFile(deployment-file)
+                            sh('''
+                                bundle exec cap production deploy
+                            ''')
                         }
-                        sh('''
-                            bundle exec cap production deploy
-                        ''')
+                        
                     // }
                 }
             }
