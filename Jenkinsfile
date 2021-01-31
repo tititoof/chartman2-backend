@@ -133,6 +133,10 @@ pipeline {
                         withCredentials([file(credentialsId: 'capistrano-chartman2-backend', variable: 'DeployFile')]) {
                             writeFile file: 'config/deploy/production.rb', text: readFile(DeployFile)
                             sh('''
+                                . ~/.rvm/scripts/rvm &> /dev/null
+                                rvm use 2.7.2
+                                gem cleanup
+                                bundle install
                                 bundle exec cap production deploy
                             ''')
                         }
