@@ -130,11 +130,9 @@ pipeline {
                 script {
                     if (env.BRANCH_NAME == 'master') {
                         echo 'Deploying....'
-                        // withCredentials([file(credentialsId: PRIVATE_KEY, variable: 'my_private_key'),
-                        //                 file(credentialsId: PUBLIC_KEY, variable: 'my_public_key')]) {
-                        //     writeFile file: 'key/private.pem', text: readFile(my_private_key)
-                        //     writeFile file: 'key/public.pem', text: readFile(my_public_key)
-                        // }
+                        withCredentials([file(credentialsId: capistrano-chartman2-backend, variable: 'deployment-file')]) {
+                            writeFile file: 'config/deploy/production.rb', text: readFile(deployment-file)
+                        }
                     }
                 }
             }
