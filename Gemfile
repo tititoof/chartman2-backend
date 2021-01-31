@@ -7,6 +7,7 @@ ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -54,6 +55,13 @@ group :development, :test do
   # Code coverage
   gem 'simplecov'
   gem 'simplecov-json'
+  # Deployment
+  gem "capistrano", "~> 3.14", require: false
+  gem "capistrano-rails", "~> 1.5", require: false
+  gem 'rvm-capistrano'
+  # Ed25519 keys support
+  gem 'ed25519', '>= 1.2', '< 2.0'
+  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 end
 
 group :development do

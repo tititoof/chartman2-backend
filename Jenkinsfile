@@ -1,13 +1,20 @@
 pipeline {
-    agent any
-
+    // environment {
+    //     GITHUB_CREDS = credentials('github-tititoof')
+    // }
+    agent {
+        node {
+            label 'agent_rails_elminster'
+        }
+    }
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
                 script {
                     sh('''
-                        source /usr/local/rvm/scripts/rvm
+                        . ~/.rvm/scripts/rvm &> /dev/null
+                        rvm install 2.7.2
                         rvm use 2.7.2
                         rvm -v
                         ruby -v
@@ -23,8 +30,9 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'chartman2-test-key', variable: 'TEST_CREDENTIALS')]) {
                         sh('''
-                            source /usr/local/rvm/scripts/rvm
+                            . ~/.rvm/scripts/rvm &> /dev/null
                             rvm use 2.7.2
+                            gem cleanup
                             bundle install
                             echo "$TEST_CREDENTIALS" > config/credentials/test.key
                             RAILS_ENV=test bundle exec rake db:create
@@ -33,7 +41,7 @@ pipeline {
                             ruby -rjson -e 'sqube = JSON.load(File.read("coverage/.resultset.json"))["RSpec"]["coverage"].transform_values {|lines| lines["lines"]}; total = { "RSpec" => { "coverage" => sqube, "timestamp" => Time.now.to_i }}; puts JSON.dump(total)' > coverage/.resultset.solarqube.json
                         ''')
                         try {
-                            sh """source /usr/local/rvm/scripts/rvm
+                            sh """. ~/.rvm/scripts/rvm &> /dev/null
                                 rvm use 2.7.2
                                 gem install rubocop
                                 bundle exec rubocop app spec --format json --out rubocop-result.json"""
@@ -81,14 +89,50 @@ pipeline {
                 }
             }
         }
-        stage('Test close') {
+        stage('Update github') {
             steps {
-                echo 'close....'
+                script {
+                    def githubBranch = env.BRANCH_NAME;
+                    def giteaBranch = env.BRANCH_NAME;
+                    if (env.BRANCH_NAME == 'master') {
+                        githubBranch = 'main'
+                        withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_CREDENTIALS')]) {
+                            sh '''
+                                if git remote | grep github > /dev/null; then
+                                    git remote rm github
+                                fi
+                                git remote add github https://$GITHUB_CREDENTIALS@github.com/tititoof/chartman2-backend.git
+                            '''
+                            try {
+                                sh "git pull github"
+                                sh "git push -u github $githubBranch"
+                            } catch (err) {
+                                echo "github error "
+                                echo err.getMessage()
+                            }
+                            sh """
+                                git checkout $giteaBranch
+                                git push --set-upstream github $giteaBranch:$githubBranch
+                            """
+                            
+                        }
+                    }
+                    echo 'Github finished'
+                }
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                script {
+                    if (env.BRANCH_NAME == 'master') {
+                        echo 'Deploying....'
+                        // withCredentials([file(credentialsId: PRIVATE_KEY, variable: 'my_private_key'),
+                        //                 file(credentialsId: PUBLIC_KEY, variable: 'my_public_key')]) {
+                        //     writeFile file: 'key/private.pem', text: readFile(my_private_key)
+                        //     writeFile file: 'key/public.pem', text: readFile(my_public_key)
+                        // }
+                    }
+                }
             }
         }
     }

@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-# Manage categories
+# Manage posts
 class PostsController < ApplicationController
   before_action :authenticate_user!
 
+  # list posts
   def index
     render json: PostSerializer.new(Post.all)
   end
 
+  # create post
   def create
     @post = PostCreator.new(
       posts_params[:title],
@@ -19,10 +21,12 @@ class PostsController < ApplicationController
     render_json
   end
 
+  # show post
   def show
     render json: PostSerializer.new(Post.find(posts_params[:id]))
   end
 
+  # update post
   def update
     @post = PostUpdater.new(
       current_user, {
@@ -31,16 +35,19 @@ class PostsController < ApplicationController
         description: posts_params[:description],
         content: posts_params[:content],
         categories: posts_params[:categories]
-    }).execute
+      }
+    ).execute
     render_json
   end
 
+  # destroy post
   def destroy
     render json: PostDestroyer.new(posts_params[:id]).execute
   end
 
   private
 
+  # render json or errors
   def render_json
     if @post.valid?
       render json: PostSerializer.new(@post)
@@ -49,6 +56,7 @@ class PostsController < ApplicationController
     end
   end
 
+  # params permitted
   def posts_params
     params.permit(
       :id,
