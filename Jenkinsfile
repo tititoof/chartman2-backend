@@ -131,7 +131,7 @@ pipeline {
                     // if (env.BRANCH_NAME == 'master') {
                         echo 'Deploying....'
                         withCredentials([file(credentialsId: 'capistrano-chartman2-backend', variable: 'DeployFile')]) {
-                            writeFile file: 'config/deploy/production.rb', text: readFile($DeployFile)
+                            writeFile file: 'config/deploy/production.rb', text: readFile('$DeployFile')
                             sh('''
                                 bundle exec cap production deploy
                             ''')
