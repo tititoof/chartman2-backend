@@ -56,6 +56,8 @@ set :conditionally_migrate, true
 # Defaults to [:web]
 set :assets_roles, [:web, :app]
 
+set :branch, 'main'
+
 # Shared files
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 append :linked_files, 'config/database.yml'
