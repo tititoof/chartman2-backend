@@ -128,12 +128,15 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    if (env.BRANCH_NAME == 'master') {
+                    // if (env.BRANCH_NAME == 'master') {
                         echo 'Deploying....'
                         withCredentials([file(credentialsId: capistrano-chartman2-backend, variable: 'deployment-file')]) {
                             writeFile file: 'config/deploy/production.rb', text: readFile(deployment-file)
                         }
-                    }
+                        sh('''
+                            bundle exec cap production deploy
+                        ''')
+                    // }
                 }
             }
         }
