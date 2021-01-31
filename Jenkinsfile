@@ -91,14 +91,14 @@ pipeline {
         }
         stage('Update github') {
             steps {
-                
                 script {
+                    def githubBranch = env.BRANCH_NAME;
+                    def giteaBranch = env.BRANCH_NAME;
+                    if (env.BRANCH_NAME == 'master') {
+                        githubBranch = 'main'
+                    }
                     withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_CREDENTIALS')]) {
-                        def githubBranch = env.BRANCH_NAME;
-                        def giteaBranch = env.BRANCH_NAME;
-                        if (env.BRANCH_NAME == 'master') {
-                            githubBranch = 'main'
-                        }
+                        
                         sh '''
                             if git remote | grep github > /dev/null; then
                                 git remote rm github
