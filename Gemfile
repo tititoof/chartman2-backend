@@ -55,6 +55,13 @@ group :development, :test do
   # Code coverage
   gem 'simplecov'
   gem 'simplecov-json'
+  # Deployment
+  gem "capistrano", "~> 3.14", require: false
+  gem "capistrano-rails", "~> 1.5", require: false
+  gem 'rvm-capistrano'
+  # Ed25519 keys support
+  gem 'ed25519', '>= 1.2', '< 2.0'
+  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 end
 
 group :development do

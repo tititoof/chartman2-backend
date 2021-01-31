@@ -95,6 +95,10 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_CREDENTIALS')]) {
                         def githubBranch = env.BRANCH_NAME;
+                        def giteaBranch = env.BRANCH_NAME;
+                        if (env.BRANCH_NAME == 'master') {
+                            githubBranch = 'main'
+                        }
                         sh '''
                             if git remote | grep github > /dev/null; then
                                 git remote rm github
@@ -110,8 +114,8 @@ pipeline {
                             echo err.getMessage()
                         }
                         sh """
-                            git checkout $githubBranch
-                            git push --set-upstream github $githubBranch:$githubBranch
+                            git checkout $giteaBranch
+                            git push --set-upstream github $giteaBranch:$githubBranch
                         """
                         
                     }
@@ -121,7 +125,14 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                if (env.BRANCH_NAME == 'master') {
+                    echo 'Deploying....'
+                    // withCredentials([file(credentialsId: PRIVATE_KEY, variable: 'my_private_key'),
+                    //                 file(credentialsId: PUBLIC_KEY, variable: 'my_public_key')]) {
+                    //     writeFile file: 'key/private.pem', text: readFile(my_private_key)
+                    //     writeFile file: 'key/public.pem', text: readFile(my_public_key)
+                    // }
+                }
             }
         }
     }
