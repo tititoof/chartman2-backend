@@ -102,7 +102,7 @@ pipeline {
                             if git remote | grep github > /dev/null; then
                                 git remote rm github
                             fi
-                            git remote add github https://$GITHUB_CREDENTIALS@github.com/${GITHUB_CREDS_USR}/chartman2-backend.git
+                            git remote add github https://$GITHUB_CREDENTIALS@github.com/tititoof/chartman2-backend.git
                         '''
                         try {
                             sh "git pull github"
