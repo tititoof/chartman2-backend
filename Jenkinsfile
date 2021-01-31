@@ -1,7 +1,4 @@
 pipeline {
-    // environment {
-    //     GITHUB_CREDS = credentials('github-tititoof')
-    // }
     agent {
         node {
             label 'agent_rails_elminster'
@@ -128,7 +125,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // if (env.BRANCH_NAME == 'master') {
+                    if (env.BRANCH_NAME == 'master') {
                         echo 'Deploying....'
                         withCredentials([file(credentialsId: 'capistrano-chartman2-backend', variable: 'DeployFile')]) {
                             writeFile file: 'config/deploy/production.rb', text: readFile(DeployFile)
@@ -140,8 +137,7 @@ pipeline {
                                 bundle exec cap production deploy
                             ''')
                         }
-                        
-                    // }
+                    }
                 }
             }
         }
