@@ -1,12 +1,12 @@
 pipeline {
+    environment {
+        GITHUB_CREDS = credentials('github-tititoof')
+    }
     agent {
         node {
             label 'agent_rails_elminster'
         }
     }
-    // environment {
-    //     GITHUB_CREDS = credentials('github-tititoof')
-    // }
     stages {
         stage('Build') {
             steps {
