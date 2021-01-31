@@ -94,30 +94,34 @@ pipeline {
                 script {
                     def githubBranch = env.BRANCH_NAME;
                     def giteaBranch = env.BRANCH_NAME;
-                    if (env.BRANCH_NAME == 'master') {
+                    if (env.BRANCH_NAME.startsWith('PR')) {
+                        echo "PR branch"
+                    } else {
+                        if (env.BRANCH_NAME == 'master') {
                         githubBranch = 'main'
                         withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_CREDENTIALS')]) {
-                            sh '''
-                                if git remote | grep github > /dev/null; then
-                                    git remote rm github
-                                fi
-                                git remote add github https://$GITHUB_CREDENTIALS@github.com/tititoof/chartman2-backend.git
-                            '''
-                            try {
-                                sh "git pull github"
-                                sh "git push -u github $githubBranch"
-                            } catch (err) {
-                                echo "github error "
-                                echo err.getMessage()
+                                sh '''
+                                    if git remote | grep github > /dev/null; then
+                                        git remote rm github
+                                    fi
+                                    git remote add github https://$GITHUB_CREDENTIALS@github.com/tititoof/chartman2-backend.git
+                                '''
+                                try {
+                                    sh "git pull github"
+                                    sh "git push -u github $githubBranch"
+                                } catch (err) {
+                                    echo "github error "
+                                    echo err.getMessage()
+                                }
+                                sh """
+                                    git checkout $giteaBranch
+                                    git push -f --set-upstream github $giteaBranch:$githubBranch
+                                """
+                                
                             }
-                            sh """
-                                git checkout $giteaBranch
-                                git push --set-upstream github $giteaBranch:$githubBranch
-                            """
-                            
                         }
+                        echo 'Github finished'
                     }
-                    echo 'Github finished'
                 }
             }
         }
