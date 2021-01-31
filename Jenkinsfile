@@ -1,7 +1,4 @@
 pipeline {
-    // environment {
-    //     GITHUB_CREDS = credentials('github-tititoof')
-    // }
     agent {
         node {
             label 'agent_rails_elminster'
@@ -130,11 +127,16 @@ pipeline {
                 script {
                     if (env.BRANCH_NAME == 'master') {
                         echo 'Deploying....'
-                        // withCredentials([file(credentialsId: PRIVATE_KEY, variable: 'my_private_key'),
-                        //                 file(credentialsId: PUBLIC_KEY, variable: 'my_public_key')]) {
-                        //     writeFile file: 'key/private.pem', text: readFile(my_private_key)
-                        //     writeFile file: 'key/public.pem', text: readFile(my_public_key)
-                        // }
+                        withCredentials([file(credentialsId: 'capistrano-chartman2-backend', variable: 'DeployFile')]) {
+                            writeFile file: 'config/deploy/production.rb', text: readFile(DeployFile)
+                            sh('''
+                                . ~/.rvm/scripts/rvm &> /dev/null
+                                rvm use 2.7.2
+                                gem cleanup
+                                bundle install
+                                bundle exec cap production deploy
+                            ''')
+                        }
                     }
                 }
             }
