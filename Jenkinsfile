@@ -94,7 +94,7 @@ pipeline {
                     if (env.BRANCH_NAME.startsWith('PR')) {
                         echo "PR branch"
                     } else {
-                        if (env.BRANCH_NAME == 'master') {
+                        if (env.BRANCH_NAME == 'main') {
                         githubBranch = 'main'
                         withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_CREDENTIALS')]) {
                                 sh '''
@@ -125,7 +125,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    if (env.BRANCH_NAME == 'master') {
+                    if (env.BRANCH_NAME == 'main') {
                         echo 'Deploying....'
                         withCredentials([file(credentialsId: 'capistrano-chartman2-backend', variable: 'DeployFile')]) {
                             writeFile file: 'config/deploy/production.rb', text: readFile(DeployFile)
