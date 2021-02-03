@@ -111,7 +111,7 @@ pipeline {
                                     echo err.getMessage()
                                 }
                                 sh """
-                                    git checkout $giteaBranch
+                                    git checkout origin/$giteaBranch
                                     git push -f --set-upstream github $giteaBranch:$githubBranch
                                 """
                                 
