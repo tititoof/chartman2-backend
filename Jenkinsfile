@@ -115,7 +115,7 @@ pipeline {
                                 }
                                 sh """
                                     git checkout origin/$giteaBranch
-                                    git push -f --set-upstream github $giteaBranch:$githubBranch
+                                    git push -f github $giteaBranch:$githubBranch
                                 """
                                 
                             }
