@@ -104,8 +104,11 @@ pipeline {
                                     git remote add github https://$GITHUB_CREDENTIALS@github.com/tititoof/chartman2-backend.git
                                 '''
                                 try {
-                                    sh "git pull github"
-                                    sh "git push -u github origin/$githubBranch"
+                                    sh """
+                                        git checkout $githubBranch
+                                        git pull github
+                                        git push -u github origin/$githubBranch
+                                    """
                                 } catch (err) {
                                     echo "github error "
                                     echo err.getMessage()
