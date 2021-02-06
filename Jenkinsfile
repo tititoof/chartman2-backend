@@ -101,8 +101,13 @@ pipeline {
                                     fi
                                     git remote add github https://$GITHUB_CREDENTIALS@github.com/tititoof/chartman2-backend.git
                                 '''
+                                try {
+                                    sh """
+                                        git rm ./config/deploy/production.rb
+                                    """
+                                catch (err) {
+                                }
                                 sh """
-                                    git rm ./config/deploy/production.rb
                                     git add .
                                     git commit -m "Github update"
                                     git push -f github HEAD:main
