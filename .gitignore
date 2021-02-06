@@ -31,3 +31,5 @@
 /config/credentials/test.key
 coverage
 rspec_results
+.scannerwork/
+.vscode/
