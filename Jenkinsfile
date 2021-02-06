@@ -89,35 +89,20 @@ pipeline {
         stage('Update github') {
             steps {
                 script {
-                    def githubBranch = env.BRANCH_NAME;
                     def giteaBranch = env.BRANCH_NAME;
                     if (env.BRANCH_NAME.startsWith('PR')) {
                         echo "PR branch"
                     } else {
                         if (env.BRANCH_NAME == 'main') {
-                        githubBranch = 'main'
-                        withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_CREDENTIALS')]) {
+                            withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_CREDENTIALS')]) {
                                 sh '''
                                     if git remote | grep github > /dev/null; then
                                         git remote rm github
                                     fi
                                     git remote add github https://$GITHUB_CREDENTIALS@github.com/tititoof/chartman2-backend.git
-                                '''
-                                try {
-                                    sh """
-                                        git checkout $githubBranch
-                                        git pull github
-                                        git push -u github origin/$githubBranch
-                                    """
-                                } catch (err) {
-                                    echo "github error "
-                                    echo err.getMessage()
-                                }
-                                sh """
                                     git checkout origin/$giteaBranch
-                                    git push -f github $giteaBranch:$githubBranch
-                                """
-                                
+                                    git push -f github $giteaBranch:$giteaBranch
+                                '''
                             }
                         }
                         echo 'Github finished'
