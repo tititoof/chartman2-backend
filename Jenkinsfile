@@ -100,9 +100,12 @@ pipeline {
                                         git remote rm github
                                     fi
                                     git remote add github https://$GITHUB_CREDENTIALS@github.com/tititoof/chartman2-backend.git
-                                    git checkout origin/$giteaBranch
-                                    git push -f github $giteaBranch:$giteaBranch
                                 '''
+                                sh """
+                                    git add .
+                                    git commit -m "Github update"
+                                    git push -f github HEAD:main
+                                """
                             }
                         }
                         echo 'Github finished'
