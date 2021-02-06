@@ -105,7 +105,8 @@ pipeline {
                                     sh """
                                         git rm ./config/deploy/production.rb
                                     """
-                                catch (err) {
+                                } catch (err) {
+                                    echo err.getMessage()
                                 }
                                 sh """
                                     git add .
