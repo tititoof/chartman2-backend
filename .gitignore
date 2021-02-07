@@ -29,6 +29,9 @@
 /config/credentials/development.key
 
 /config/credentials/test.key
+
+/config/deploy/production.rb
+
 coverage
 rspec_results
 .scannerwork/
