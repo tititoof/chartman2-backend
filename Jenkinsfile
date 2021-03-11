@@ -11,8 +11,8 @@ pipeline {
                 script {
                     sh('''
                         . ~/.rvm/scripts/rvm &> /dev/null
-                        rvm install 2.7.2
-                        rvm use 2.7.2
+                        rvm install ruby-3
+                        rvm use ruby-3
                         rvm -v
                         ruby -v
                         gem -v
@@ -28,7 +28,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'chartman2-test-key', variable: 'TEST_CREDENTIALS')]) {
                         sh('''
                             . ~/.rvm/scripts/rvm &> /dev/null
-                            rvm use 2.7.2
+                            rvm use ruby-3
                             gem cleanup
                             bundle install
                             echo "$TEST_CREDENTIALS" > config/credentials/test.key
@@ -39,7 +39,7 @@ pipeline {
                         ''')
                         try {
                             sh """. ~/.rvm/scripts/rvm &> /dev/null
-                                rvm use 2.7.2
+                                rvm use ruby-3
                                 gem install rubocop
                                 bundle exec rubocop app spec --format json --out rubocop-result.json"""
                         } catch (err) {
@@ -129,7 +129,7 @@ pipeline {
                             writeFile file: 'config/deploy/production.rb', text: readFile(DeployFile)
                             sh('''
                                 . ~/.rvm/scripts/rvm &> /dev/null
-                                rvm use 2.7.2
+                                rvm use ruby-3
                                 gem cleanup
                                 bundle install
                                 bundle exec cap production deploy
