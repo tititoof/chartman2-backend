@@ -56,7 +56,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'simplecov-json'
   # Deployment
-  gem "capistrano", "~> 3.14", require: false
+  gem "capistrano", "~> 3.16", require: false
   gem "capistrano-rails", "~> 1.5", require: false
   gem 'rvm-capistrano'
   # Ed25519 keys support
