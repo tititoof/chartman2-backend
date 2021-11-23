@@ -1,1 +1,6 @@
 require: rubocop-rspec
+
+Lint/MissingSuper:
+  Exclude:
+    - 'app/services/**/*'
+    - 'app/procedures/**/*'

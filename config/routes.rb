@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :categories
     resources :posts
     resources :users
+
+    # Visitor's articles and categories
     get '/visitors/articles/:category_id', to: 'visitors#articles'
     get '/visitors/article/:article_id', to: 'visitors#article'
     get '/visitors/categories', to: 'visitors#categories'

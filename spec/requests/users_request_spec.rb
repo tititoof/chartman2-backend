@@ -8,7 +8,9 @@ RSpec.describe 'Users', type: :request do
   before do
     @current_user = User.new(name: 'Test user name', email: 'toto@toto.fr', password: 'password', admin: true)
     @current_user.save
+
     login
+
     @auth_tokens = get_auth_params_from_login_response_headers(response)
   end
 

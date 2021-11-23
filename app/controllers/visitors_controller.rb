@@ -4,25 +4,41 @@
 class VisitorsController < ApplicationController
   # show articles from a category
   def articles
-    render json: PostSerializer.new(Post.from_category(Category.find(visitor_params[:category_id])))
+    @data = Articles::FindFromCategory.call(visitor_params[:category_id])
+
+    render_json PostSerializer
   end
 
   # show an article
   def article
-    render json: PostSerializer.new(Post.find(visitor_params[:article_id]))
+    @data = Posts::PostFind.call(visitor_params[:article_id])
+
+    render_json PostSerializer
   end
 
   # show categories
   def categories
-    render json: CategorySerializer.new(Category.all)
+    @data = OpenStruct.new({ success?: true, payload: Category.all, status: :ok })
+
+    render_json CategorySerializer
   end
 
   # show a category
   def category
-    render json: CategorySerializer.new(Category.find(visitor_params[:category_id]))
+    @data = Categories::CategoryFind.call(visitor_params[:category_id])
+
+    render_json CategorySerializer
   end
 
   private
+
+  def render_json(serializer)
+    if @data.success?
+      render json: serializer.new(@data.payload)
+    else
+      render json: @data.errors, status: :precondition_failed
+    end
+  end
 
   # params permitted
   def visitor_params

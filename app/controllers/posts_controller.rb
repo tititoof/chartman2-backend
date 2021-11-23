@@ -6,51 +6,59 @@ class PostsController < ApplicationController
 
   # list posts
   def index
-    render json: PostSerializer.new(Post.all)
+    @post = OpenStruct.new({ success?: true, payload: Post.all, status: :ok })
+    
+    render_json
   end
 
   # create post
   def create
-    @post = PostCreator.new(
+    @post = Posts::PostCreate.call(
       posts_params[:title],
       posts_params[:description],
       posts_params[:content],
       posts_params[:categories],
       current_user
-    ).execute
+    )
+
     render_json
   end
 
   # show post
   def show
-    render json: PostSerializer.new(Post.find(posts_params[:id]))
+    @post = Posts::PostFind.call(params[:id])
+
+    render_json
   end
 
   # update post
   def update
-    @post = PostUpdater.new(
+    @post = Posts::PostUpdate.call(
       current_user, {
-        id: posts_params[:id],
+        id: params[:id],
         title: posts_params[:title],
         description: posts_params[:description],
         content: posts_params[:content],
         categories: posts_params[:categories]
       }
-    ).execute
+    )
+
     render_json
   end
 
   # destroy post
   def destroy
-    render json: PostDestroyer.new(posts_params[:id]).execute
+    @post = Posts::PostDestroy.call(params[:id])
+    
+    render_json
   end
 
   private
 
   # render json or errors
   def render_json
-    if @post.valid?
-      render json: PostSerializer.new(@post)
+    if @post.success?
+      render json: PostSerializer.new(@post.payload)
     else
       render json: @post.errors, status: :precondition_failed
     end
@@ -58,7 +66,7 @@ class PostsController < ApplicationController
 
   # params permitted
   def posts_params
-    params.permit(
+    params.require(:post).permit(
       :id,
       :title,
       :description,
