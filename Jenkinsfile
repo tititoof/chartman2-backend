@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'agent_rails_elminster'
+            label 'agent_rails_1'
         }
     }
     stages {
