@@ -12,8 +12,6 @@ pipeline {
                     sh('''
                         curl -sSL https://rvm.io/mpapis.asc | gpg2 --import
                         curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import
-                        curl -sSL https://get.rvm.io | bash -s stable --ruby
-                        curl -sSL https://get.rvm.io | bash -s stable --rails
                         . ~/.rvm/scripts/rvm &> /dev/null
                         rvm install ruby-3
                         rvm use ruby-3
