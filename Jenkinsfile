@@ -10,9 +10,6 @@ pipeline {
                 echo 'Building..'
                 script {
                     sh('''
-                        sudo curl -sSL https://rvm.io/mpapis.asc | gpg2 --import
-                        sudo curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import
-                        whoami
                         . ~/.rvm/scripts/rvm
                         rvm install ruby-3
                         rvm use ruby-3
