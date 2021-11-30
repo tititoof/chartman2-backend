@@ -54,7 +54,7 @@ pipeline {
         }
         stage('SonarQube Quality Gate') {
             steps {
-                echo 'Check quality..'
+                echo 'Send quality'
                 script {
                     def scannerHome = tool 'sonarqube-scanner';
                     def sonarqubeBranch = 'chartman2-backend-dev';
@@ -80,6 +80,7 @@ pipeline {
         }
         stage("Quality Gate") {
             steps {
+                echo 'Check quality'
                 script {
                     timeout(time: 1, unit: 'HOURS') {
                         def qualitygate = waitForQualityGate()
