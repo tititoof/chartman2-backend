@@ -63,14 +63,14 @@ pipeline {
                             sonarqubeBranch = 'chartman2-backend'
                         }
                         sh '''#!/bin/zsh
-                            ${tool("sonarscanner")}/bin/sonar-scanner \
+                            ${scannerHome}/bin/sonar-scanner \
                                 -Dsonar.projectKey=$sonarqubeBranch \
                                 -Dsonar.sources='app, lib' \
                                 -Dsonar.exclusions=app/assets/**/* \
-                                -Dsonar.host.url=http://192.168.1.201:9080 \
+                                -Dsonar.host.url=http://192.168.1.201:9000 \
                                 -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.solarqube.json \
                                 -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
-                                -Dsonar.login=dd720dccbf88391235e748c560c2be46672928c8'''
+                                -Dsonar.login=fb420b54a4ce9829a44f03da593d284d970e14f8'''
                     }
                 }
             }
