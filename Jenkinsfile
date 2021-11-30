@@ -10,6 +10,7 @@ pipeline {
                 echo 'Building..'
                 script {
                     sh('''
+                        /bin/bash
                         . ~/.rvm/scripts/rvm
                         rvm install ruby-3
                         rvm use ruby-3
@@ -27,6 +28,7 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'chartman2-test-key', variable: 'TEST_CREDENTIALS')]) {
                         sh('''
+                            /bin/bash
                             . ~/.rvm/scripts/rvm &> /dev/null
                             rvm use ruby-3
                             gem cleanup
