@@ -18,12 +18,12 @@ module Posts
 
       Articles::ArticlesAdd.call(post, @categories_ids) if post.valid?
       post.save!
-      
+
       OpenStruct.new({ success?: true, payload: post, status: :ok })
-    rescue ActiveRecord::RecordInvalid => invalid
-      OpenStruct.new({ success?: false, errors: invalid.record.errors, status: ActiveRecord::RecordInvalid })
-    rescue ActiveRecord::RecordNotFound => invalid
-      OpenStruct.new({ success?: false, errors: invalid.record.errors, status: ActiveRecord::RecordNotFound })
+    rescue ActiveRecord::RecordInvalid => e
+      OpenStruct.new({ success?: false, errors: e.record.errors, status: ActiveRecord::RecordInvalid })
+    rescue ActiveRecord::RecordNotFound => e
+      OpenStruct.new({ success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound })
     end
   end
 end

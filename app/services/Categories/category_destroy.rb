@@ -15,8 +15,8 @@ module Categories
       category.destroy!
 
       OpenStruct.new({ success?: true, payload: category, status: :ok })
-    rescue ActiveRecord::RecordNotFound => invalid
-      OpenStruct.new({ success?: false, errors: invalid.record.errors, status: ActiveRecord::RecordNotFound })
+    rescue ActiveRecord::RecordNotFound => e
+      OpenStruct.new({ success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound })
     end
   end
 end

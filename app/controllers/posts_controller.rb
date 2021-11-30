@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # list posts
   def index
     @post = OpenStruct.new({ success?: true, payload: Post.all, status: :ok })
-    
+
     render_json
   end
 
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   # destroy post
   def destroy
     @post = Posts::PostDestroy.call(params[:id])
-    
+
     render_json
   end
 

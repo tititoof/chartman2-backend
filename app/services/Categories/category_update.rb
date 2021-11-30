@@ -16,8 +16,8 @@ module Categories
       category.update!(name: @name)
 
       OpenStruct.new({ success?: true, payload: category, status: :ok })
-    rescue ActiveRecord::RecordInvalid => invalid
-      OpenStruct.new({ success?: false, errors: invalid.record.errors, status: ActiveRecord::RecordInvalid })
+    rescue ActiveRecord::RecordInvalid => e
+      OpenStruct.new({ success?: false, errors: e.record.errors, status: ActiveRecord::RecordInvalid })
     end
   end
 end

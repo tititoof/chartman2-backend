@@ -13,8 +13,8 @@ module Posts
       post = Post.find(@id)
 
       OpenStruct.new({ success?: true, payload: post, status: :ok })
-    rescue ActiveRecord::RecordNotFound => invalid
-      OpenStruct.new({ success?: false, errors: invalid.record.errors, status: ActiveRecord::RecordNotFound })
+    rescue ActiveRecord::RecordNotFound => e
+      OpenStruct.new({ success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound })
     end
   end
 end
