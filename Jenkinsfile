@@ -42,7 +42,7 @@ pipeline {
                                 . ~/.rvm/scripts/rvm &> /dev/null
                                 rvm use ruby-3
                                 gem install rubocop
-                                bundle exec rubocop app spec --format json --out rubocop-result.json"""
+                                bundle exec rubocop app --format json --out rubocop-result.json"""
                         } catch (err) {
                             echo "Rubocop error "
                             echo err.getMessage()
@@ -56,20 +56,20 @@ pipeline {
             steps {
                 echo 'Check quality..'
                 script {
+                    def scannerHome = tool 'sonarqube-scanner';
                     def sonarqubeBranch = 'chartman2-backend-dev';
                     withSonarQubeEnv("sonarqube") {
                         if (env.BRANCH_NAME == 'master') {
                             sonarqubeBranch = 'chartman2-backend'
                         }
-                        sh '''#!/bin/zsh
-                            ${scannerHome}/bin/sonar-scanner \
+                        sh """${scannerHome}/bin/sonar-scanner \
                                 -Dsonar.projectKey=$sonarqubeBranch \
                                 -Dsonar.sources='app, lib' \
                                 -Dsonar.exclusions=app/assets/**/* \
                                 -Dsonar.host.url=http://192.168.1.201:9000 \
                                 -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.solarqube.json \
                                 -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
-                                -Dsonar.login=fb420b54a4ce9829a44f03da593d284d970e14f8'''
+                                -Dsonar.login=fb420b54a4ce9829a44f03da593d284d970e14f8"""
                     }
                 }
             }
