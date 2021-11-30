@@ -58,19 +58,21 @@ pipeline {
                 script {
                     def scannerHome = tool 'sonarqube-scanner';
                     def sonarqubeBranch = 'chartman2-backend-dev';
-                    withCredentials([string(credentialsId: 'sonarqubeId', variable: 'SONAR_CREDENTIALS')]) {
-                        withSonarQubeEnv("sonarqube") {
-                            if (env.BRANCH_NAME == 'master') {
-                                sonarqubeBranch = 'chartman2-backend'
+                    withCredentials([string(credentialsId: 'sonarqube-server', variable: 'SONAR_URL')]) {
+                        withCredentials([string(credentialsId: 'sonarqubeId', variable: 'SONAR_CREDENTIALS')]) {
+                            withSonarQubeEnv("sonarqube") {
+                                if (env.BRANCH_NAME == 'master') {
+                                    sonarqubeBranch = 'chartman2-backend'
+                                }
+                                sh """${scannerHome}/bin/sonar-scanner \
+                                        -Dsonar.projectKey=$sonarqubeBranch \
+                                        -Dsonar.sources='app' \
+                                        -Dsonar.exclusions=app/assets/**/* \
+                                        -Dsonar.host.url=SONAR_URL \
+                                        -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.solarqube.json \
+                                        -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
+                                        -Dsonar.login=$SONAR_CREDENTIALS"""
                             }
-                            sh """${scannerHome}/bin/sonar-scanner \
-                                    -Dsonar.projectKey=$sonarqubeBranch \
-                                    -Dsonar.sources='app' \
-                                    -Dsonar.exclusions=app/assets/**/* \
-                                    -Dsonar.host.url=http://192.168.1.201:9000 \
-                                    -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.solarqube.json \
-                                    -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
-                                    -Dsonar.login=$SONAR_CREDENTIALS"""
                         }
                     }
                 }
