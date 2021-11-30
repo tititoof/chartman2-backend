@@ -56,7 +56,6 @@ pipeline {
             steps {
                 echo 'Check quality..'
                 script {
-                    def scannerHome = tool 'sonarscanner';
                     def sonarqubeBranch = 'chartman2-backend-dev';
                     withSonarQubeEnv("sonarqube") {
                         if (env.BRANCH_NAME == 'master') {
