@@ -38,7 +38,8 @@ pipeline {
                             ruby -rjson -e 'sqube = JSON.load(File.read("coverage/.resultset.json"))["RSpec"]["coverage"].transform_values {|lines| lines["lines"]}; total = { "RSpec" => { "coverage" => sqube, "timestamp" => Time.now.to_i }}; puts JSON.dump(total)' > coverage/.resultset.solarqube.json
                         ''')
                         try {
-                            sh """. ~/.rvm/scripts/rvm &> /dev/null
+                            sh """#!/bin/zsh
+                                . ~/.rvm/scripts/rvm &> /dev/null
                                 rvm use ruby-3
                                 gem install rubocop
                                 bundle exec rubocop app spec --format json --out rubocop-result.json"""
@@ -61,11 +62,12 @@ pipeline {
                         if (env.BRANCH_NAME == 'master') {
                             sonarqubeBranch = 'chartman2-backend'
                         }
-                        sh "${tool("sonarscanner")}/bin/sonar-scanner \
+                        sh "#!/bin/zsh
+                            ${tool("sonarscanner")}/bin/sonar-scanner \
                                 -Dsonar.projectKey=$sonarqubeBranch \
                                 -Dsonar.sources='app, lib' \
                                 -Dsonar.exclusions=app/assets/**/* \
-                                -Dsonar.host.url=http://192.168.1.204:9080 \
+                                -Dsonar.host.url=http://192.168.1.201:9080 \
                                 -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.solarqube.json \
                                 -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
                                 -Dsonar.login=dd720dccbf88391235e748c560c2be46672928c8"
