@@ -62,7 +62,7 @@ pipeline {
                         if (env.BRANCH_NAME == 'master') {
                             sonarqubeBranch = 'chartman2-backend'
                         }
-                        sh "#!/bin/zsh
+                        sh '''#!/bin/zsh
                             ${tool("sonarscanner")}/bin/sonar-scanner \
                                 -Dsonar.projectKey=$sonarqubeBranch \
                                 -Dsonar.sources='app, lib' \
@@ -70,7 +70,7 @@ pipeline {
                                 -Dsonar.host.url=http://192.168.1.201:9080 \
                                 -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.solarqube.json \
                                 -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
-                                -Dsonar.login=dd720dccbf88391235e748c560c2be46672928c8"
+                                -Dsonar.login=dd720dccbf88391235e748c560c2be46672928c8'''
                     }
                 }
             }
