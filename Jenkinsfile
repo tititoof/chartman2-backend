@@ -58,18 +58,20 @@ pipeline {
                 script {
                     def scannerHome = tool 'sonarqube-scanner';
                     def sonarqubeBranch = 'chartman2-backend-dev';
-                    withSonarQubeEnv("sonarqube") {
-                        if (env.BRANCH_NAME == 'master') {
-                            sonarqubeBranch = 'chartman2-backend'
+                    withCredentials([string(credentialsId: 'sonarqubeId', variable: 'SONAR_CREDENTIALS')]) {
+                        withSonarQubeEnv("sonarqube") {
+                            if (env.BRANCH_NAME == 'master') {
+                                sonarqubeBranch = 'chartman2-backend'
+                            }
+                            sh """${scannerHome}/bin/sonar-scanner \
+                                    -Dsonar.projectKey=$sonarqubeBranch \
+                                    -Dsonar.sources='app' \
+                                    -Dsonar.exclusions=app/assets/**/* \
+                                    -Dsonar.host.url=http://192.168.1.201:9000 \
+                                    -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.solarqube.json \
+                                    -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
+                                    -Dsonar.login=$SONAR_CREDENTIALS"""
                         }
-                        sh """${scannerHome}/bin/sonar-scanner \
-                                -Dsonar.projectKey=$sonarqubeBranch \
-                                -Dsonar.sources='app' \
-                                -Dsonar.exclusions=app/assets/**/* \
-                                -Dsonar.host.url=http://192.168.1.201:9000 \
-                                -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.solarqube.json \
-                                -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
-                                -Dsonar.login=fb420b54a4ce9829a44f03da593d284d970e14f8"""
                     }
                 }
             }
