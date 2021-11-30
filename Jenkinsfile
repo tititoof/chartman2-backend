@@ -68,7 +68,7 @@ pipeline {
                                         -Dsonar.projectKey=$sonarqubeBranch \
                                         -Dsonar.sources='app' \
                                         -Dsonar.exclusions=app/assets/**/* \
-                                        -Dsonar.host.url=SONAR_URL \
+                                        -Dsonar.host.url=$SONAR_URL \
                                         -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.solarqube.json \
                                         -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
                                         -Dsonar.login=$SONAR_CREDENTIALS"""
