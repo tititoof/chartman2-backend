@@ -1,0 +1,16 @@
+{
+  "husky": {
+    "hooks": {
+      "pre-commit":"lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{rb,rake}":["rubocop -a","rubocop","git add"]
+    }
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2"
+  }
+}
