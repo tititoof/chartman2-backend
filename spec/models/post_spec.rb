@@ -20,11 +20,13 @@ RSpec.describe Post, type: :model do
 
   it 'is not valid without title' do
     subject.title = nil
+
     expect(subject).not_to be_valid
   end
 
   it 'is not valid without content' do
     subject.content = nil
+
     expect(subject).not_to be_valid
   end
 

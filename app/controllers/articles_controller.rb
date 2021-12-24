@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 # Show articles and categories
-class VisitorsController < ApplicationController
+class ArticlesController < ApplicationController
   # show articles from a category
-  def articles
-    @data = Articles::FindFromCategory.call(visitor_params[:category_id])
+  def from_category
+    @data = Articles::FindFromCategory.call(articles_params[:category_id])
 
     render_json PostSerializer
   end
 
   # show an article
-  def article
-    @data = Posts::PostFind.call(visitor_params[:article_id])
+  def show
+    @data = Posts::PostFind.call(articles_params[:article_id])
 
     render_json PostSerializer
   end
@@ -25,7 +25,7 @@ class VisitorsController < ApplicationController
 
   # show a category
   def category
-    @data = Categories::CategoryFind.call(visitor_params[:category_id])
+    @data = Categories::CategoryFind.call(articles_params[:category_id])
 
     render_json CategorySerializer
   end
@@ -41,7 +41,7 @@ class VisitorsController < ApplicationController
   end
 
   # params permitted
-  def visitor_params
+  def articles_params
     params.permit(:category_id, :article_id)
   end
 end

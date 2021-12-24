@@ -15,8 +15,8 @@ module Posts
 
     def execute
       post = Post.create(title: @title, description: @description, content: @content, user: @user)
-
       Articles::ArticlesAdd.call(post, @categories_ids) if post.valid?
+
       post.save!
 
       OpenStruct.new({ success?: true, payload: post, status: :ok })

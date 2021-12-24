@@ -6,6 +6,7 @@ RSpec.describe 'Users', type: :request do
   include ActionController::RespondWith
 
   before do
+    Faker::UniqueGenerator.clear
     @current_user = User.new(name: 'Test user name', email: 'toto@toto.fr', password: 'password', admin: true)
     @current_user.save
 

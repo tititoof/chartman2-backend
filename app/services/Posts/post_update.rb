@@ -10,7 +10,7 @@ module Posts
       @title = params[:title]
       @description = params[:description]
       @content = params[:content]
-      @categories_ids = params[:categories_ids]
+      @categories_ids = params[:categories]
       @user = user
     end
 
@@ -19,6 +19,7 @@ module Posts
 
       post.update(title: @title, description: @description, content: @content, user: @user)
       Articles::ArticlesAdd.call(post, @categories_ids) if post.valid?
+
       post.save!
 
       OpenStruct.new({ success?: true, payload: post, status: :ok })

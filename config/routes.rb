@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     resources :users
 
     # Visitor's articles and categories
-    get '/visitors/articles/:category_id', to: 'visitors#articles'
-    get '/visitors/article/:article_id', to: 'visitors#article'
-    get '/visitors/categories', to: 'visitors#categories'
-    get '/visitors/category/:category_id', to: 'visitors#category'
+    get '/articles/category/:category_id', to: 'articles#from_category'
+    get '/article/:article_id', to: 'articles#show'
+    get '/articles/categories', to: 'articles#categories'
+    get '/category/:category_id', to: 'articles#category'
   end
 end

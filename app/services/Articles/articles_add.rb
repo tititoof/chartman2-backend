@@ -3,7 +3,7 @@
 module Articles
   # Add categories to a post
   class ArticlesAdd < ApplicationCallable
-    attr_reader :post, :categories_ids
+    attr_reader :categories_ids
 
     def initialize(post, categories_ids)
       @post = post
@@ -21,6 +21,8 @@ module Articles
       end
 
       @post.categories = categories
+
+      @post
     end
   end
 end

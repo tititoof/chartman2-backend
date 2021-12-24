@@ -3,10 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Articles', type: :request do
+  Faker::UniqueGenerator.clear
+  
   it 'show articles from category' do
     category = FactoryBot.create(:category)
 
-    get "/visitors/articles/#{category.id}"
+    get "/articles/category/#{category.id}"
 
     expect(response.status).to eq(200)
   end
@@ -14,7 +16,7 @@ RSpec.describe 'Articles', type: :request do
   it 'show article' do
     post = FactoryBot.create(:post)
 
-    get "/visitors/article/#{post.id}"
+    get "/article/#{post.id}"
 
     expect(response.status).to eq(200)
     expect(response).to match_response_schema('post')
@@ -23,16 +25,20 @@ RSpec.describe 'Articles', type: :request do
   it 'show category' do
     category = FactoryBot.create(:category)
 
-    get "/visitors/category/#{category.id}"
+    get "/category/#{category.id}"
 
     expect(response.status).to eq(200)
     expect(response).to match_response_schema('category')
   end
 
   it 'show categories' do
-    get '/visitors/categories'
+    2.times do 
+      category = FactoryBot.create(:category)
+    end
+
+    get '/articles/categories'
 
     expect(response.status).to eq(200)
-    expect(response).to match_response_schema('category')
+    expect(response).to match_response_schema('categories')
   end
 end
