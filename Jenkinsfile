@@ -116,6 +116,8 @@ pipeline {
                                     echo err.getMessage()
                                 }
                                 sh """
+                                    git config --global user.email "chartmann.35@gmail.com"
+                                    git config --global user.name "Christophe Hartmann"
                                     git add .
                                     git commit -m "Github update"
                                     git push -f github HEAD:main
