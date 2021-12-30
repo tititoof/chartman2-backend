@@ -28,7 +28,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'chartman2-test-key', variable: 'TEST_CREDENTIALS')]) {
                         sh('''#!/bin/zsh
                             . ~/.rvm/scripts/rvm &> /dev/null
-                            rvm use ruby-3
+                            rvm use ruby-3.0.2
                             gem cleanup
                             bundle install
                             echo "$TEST_CREDENTIALS" > config/credentials/test.key
@@ -41,7 +41,7 @@ pipeline {
                         try {
                             sh """#!/bin/zsh
                                 . ~/.rvm/scripts/rvm &> /dev/null
-                                rvm use ruby-3
+                                rvm use ruby-3.0.2
                                 gem install rubocop
                                 bundle exec rubocop app --format json --out rubocop-result.json"""
                         } catch (err) {
