@@ -62,7 +62,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'sonarqube-server', variable: 'SONAR_URL')]) {
                         withCredentials([string(credentialsId: 'sonarqubeId', variable: 'SONAR_CREDENTIALS')]) {
                             withSonarQubeEnv("sonarqube") {
-                                if (env.BRANCH_NAME == 'master') {
+                                if (env.BRANCH_NAME == 'main') {
                                     sonarqubeBranch = 'chartman2-backend'
                                 }
                                 sh """${scannerHome}/bin/sonar-scanner \
