@@ -39,3 +39,4 @@ coverage
 rspec_results
 .scannerwork/
 .vscode/
+sorbet/

@@ -11,8 +11,8 @@ pipeline {
                 script {
                     sh('''#!/bin/zsh
                         . ~/.rvm/scripts/rvm
-                        rvm install ruby-3
-                        rvm use ruby-3
+                        rvm install ruby-3.0.2
+                        rvm use ruby-3.0.2
                         rvm -v
                         ruby -v
                         gem -v
@@ -136,7 +136,7 @@ pipeline {
                             writeFile file: 'config/deploy/production.rb', text: readFile(DeployFile)
                             sh('''
                                 . ~/.rvm/scripts/rvm &> /dev/null
-                                rvm use ruby-3
+                                rvm use ruby-3.0.2
                                 gem cleanup
                                 bundle install
                                 bundle exec cap production deploy
