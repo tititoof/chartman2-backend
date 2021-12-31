@@ -3,14 +3,14 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
-set :application, "chartman2"
-set :repo_url, "git@github.com:tititoof/chartman2-backend.git"
+set :application, "chartman2.fr"
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/www/websites/chartman2/backend"
+set :deploy_to, "/var/www/websites/chartman2.fr/backend"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -29,7 +29,7 @@ set :deploy_to, "/var/www/websites/chartman2/backend"
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
 # Default value for default_env is {}
-set :default_env, { path: "/usr/share/rvm/rubies/ruby-2.7.2/bin/:$PATH" }
+#set :default_env, { path: "/usr/share/rvm/rubies/ruby-2.7.2/bin/:$PATH" }
 
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
@@ -55,6 +55,18 @@ set :conditionally_migrate, true
 
 # Defaults to [:web]
 set :assets_roles, [:web, :app]
+
+
+set :assets_prefix, 'prepackaged-assets'
+
+# Defaults to ["/path/to/release_path/public/#{fetch(:assets_prefix)}/.sprockets-manifest*", "/path/to/release_path/public/#{fetch(:assets_prefix)}/manifest*.*"]
+# This should match config.assets.manifest in your rails config/application.rb
+set :assets_manifests, ['app/assets/config/manifest.js']
+
+# RAILS_GROUPS env value for the assets:precompile task. Default to nil.
+set :rails_assets_groups, :assets
+
+set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
 
 set :branch, 'main'
 

@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/seuros/capistrano-puma.git
+  revision: f9801f6762d152c5d9da18ce726c7561cc4f9a8b
+  specs:
+    capistrano3-puma (5.2.0)
+      capistrano (~> 3.7)
+      capistrano-bundler
+      puma (>= 4.0, < 6.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -81,6 +90,9 @@ GEM
     capistrano-rails (1.6.1)
       capistrano (~> 3.1)
       capistrano-bundler (>= 1.1, < 3)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     commander (4.6.0)
       highline (~> 2.0.0)
     concurrent-ruby (1.1.9)
@@ -240,8 +252,6 @@ GEM
     rubocop-rspec (2.6.0)
       rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
-    rvm-capistrano (1.5.0)
-      capistrano (>= 2.15.4)
     safe_type (1.1.1)
     shoulda-matchers (5.0.0)
       activesupport (>= 5.2.0)
@@ -298,7 +308,10 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capistrano (~> 3.16)
-  capistrano-rails (~> 1.5)
+  capistrano-bundler
+  capistrano-rails (~> 1.6)
+  capistrano-rvm
+  capistrano3-puma!
   database_cleaner-active_record
   devise
   devise_token_auth
@@ -319,7 +332,6 @@ DEPENDENCIES
   rubocop
   rubocop-rails
   rubocop-rspec
-  rvm-capistrano
   shoulda-matchers
   simplecov
   simplecov-json

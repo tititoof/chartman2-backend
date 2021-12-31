@@ -60,8 +60,12 @@ group :development, :test do
   gem 'simplecov-json'
   # Deployment
   gem "capistrano", "~> 3.16", require: false
-  gem "capistrano-rails", "~> 1.5", require: false
-  gem 'rvm-capistrano'
+  gem "capistrano-rails", "~> 1.6", require: false
+  # integrate bundler with capistrano
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+
   # Ed25519 keys support
   gem 'ed25519', '>= 1.2', '< 2.0'
   gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'

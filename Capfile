@@ -17,9 +17,12 @@ require "capistrano/deploy"
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
 
-#require 'capistrano/rails'
+require 'capistrano/rails'
 
-require "rvm/capistrano"
+require 'capistrano/rvm'
+require 'capistrano/bundler'
+require 'capistrano/rails/migrations'
+require 'capistrano/rails/assets'
 #require "bundler/capistrano"
 # Include tasks from other gems included in your Gemfile
 #
