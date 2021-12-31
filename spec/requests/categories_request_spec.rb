@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Categories', type: :request do
+RSpec.describe 'CategoriesController', type: :request do
   include ActionController::RespondWith
 
   before do

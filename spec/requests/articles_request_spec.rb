@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Articles', type: :request do
+RSpec.describe 'ArticlesController', type: :request do
   Faker::UniqueGenerator.clear
   
   it 'show articles from category' do
