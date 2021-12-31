@@ -72,4 +72,4 @@ set :branch, 'main'
 
 # Shared files
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
-append :linked_files, 'config/database.yml', 'config/credentials/production.key'
+append :linked_files, 'config/database.yml', 'config/credentials/production.key', 'config/master.key'
