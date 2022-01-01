@@ -5,7 +5,6 @@ lock "~> 3.16.0"
 
 set :application, "chartman2.fr"
 
-
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -69,6 +68,10 @@ set :rails_assets_groups, :assets
 set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
 
 set :branch, 'main'
+
+set :puma_service_unit_env_vars, %w[
+  PUMA_METRICS_HTTP=tcp://0.0.0.0:8000
+]
 
 # Shared files
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'

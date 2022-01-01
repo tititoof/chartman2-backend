@@ -23,6 +23,10 @@ require 'capistrano/rvm'
 require 'capistrano/bundler'
 require 'capistrano/rails/migrations'
 require 'capistrano/rails/assets'
+require 'capistrano/puma'
+
+install_plugin Capistrano::Puma  # Default puma tasks
+install_plugin Capistrano::Puma::Systemd  # if you use SystemD
 #require "bundler/capistrano"
 # Include tasks from other gems included in your Gemfile
 #
