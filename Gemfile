@@ -65,6 +65,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+  #gem 'capistrano-foreman', github: 'koenpunt/capistrano-foreman'
 
   # Ed25519 keys support
   gem 'ed25519', '>= 1.2', '< 2.0'

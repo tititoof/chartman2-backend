@@ -69,9 +69,11 @@ set :normalize_asset_timestamps, %w{public/images public/javascripts public/styl
 
 set :branch, 'main'
 
-set :puma_service_unit_env_vars, %w[
-  PUMA_METRICS_HTTP=tcp://0.0.0.0:8000
-]
+set :puma_bind, "tcp://127.0.0.1:8000"
+set :puma_phased_restart, true
+set :puma_enable_socket_service, false
+set :puma_workers, 1
+set :puma_init_active_record, true
 
 # Shared files
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
