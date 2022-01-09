@@ -8,6 +8,7 @@ RSpec.describe Post, type: :model do
       title: 'test post title',
       description: 'test description',
       content: 'this is a long content',
+      published: true,
       published_at: '2020-12-01',
       user: User.new,
       categories: [FactoryBot.create(:category)]
@@ -26,6 +27,18 @@ RSpec.describe Post, type: :model do
 
   it 'is not valid without content' do
     subject.content = nil
+
+    expect(subject).not_to be_valid
+  end
+
+  it 'is not valid without published' do
+    subject.published = false
+
+    expect(subject).not_to be_valid
+  end
+
+  it 'is not valid without published_at' do
+    subject.published_at = nil
 
     expect(subject).not_to be_valid
   end

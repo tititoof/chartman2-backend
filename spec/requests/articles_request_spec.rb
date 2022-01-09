@@ -3,7 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe 'ArticlesController', type: :request do
-  Faker::UniqueGenerator.clear
+  before do
+    Faker::UniqueGenerator.clear
+  end
   
   it 'show articles from category' do
     category = FactoryBot.create(:category)

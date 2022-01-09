@@ -71,6 +71,18 @@ RSpec.describe 'PostsController', type: :request do
     expect(current_post['attributes']['title']).to eq new_post.title
   end
 
+  it 'publish a post' do
+    new_post = FactoryBot.create(:post)
+
+    post publish_post_path(new_post.id), params: { post: { publish: true } }, headers: @auth_tokens
+
+    current_post = response_body['data']
+
+    expect(response.status).to eq(200)
+    expect(response).to match_response_schema('post')
+    expect(current_post['attributes']['published']).to eq true
+  end
+
   it 'destroy a post' do
     post_to_destroy = FactoryBot.create(:post)
 

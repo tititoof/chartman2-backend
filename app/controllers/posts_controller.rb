@@ -46,6 +46,12 @@ class PostsController < ApplicationController
     render_json
   end
 
+  def publish
+    @post = Posts::PostPublish.call(params[:id], posts_params[:publish])
+
+    render_json
+  end
+
   # destroy post
   def destroy
     @post = Posts::PostDestroy.call(params[:id])
@@ -72,6 +78,7 @@ class PostsController < ApplicationController
       :description,
       :content,
       :user_id,
+      :publish,
       categories: []
     )
   end

@@ -12,7 +12,7 @@ module Articles
     def execute
       category = Category.find(@category_id)
 
-      articles = Post.from_category(category)
+      articles = Post.from_category(category).published
 
       OpenStruct.new({ success?: true, payload: articles, status: :ok })
     rescue ActiveRecord::RecordNotFound => e
