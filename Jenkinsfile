@@ -34,7 +34,6 @@ pipeline {
                             echo "$TEST_CREDENTIALS" > config/credentials/test.key
                             RAILS_ENV=test bundle exec rake db:create
                             RAILS_ENV=test bundle exec rake db:migrate
-                            RAILS_ENV=test bundle exec rake id_to_uuid
                             RAILS_ENV=test bundle exec rspec spec/* --format html --out rspec_results/results.html --format RspecJunitFormatter --out rspec_results/results.xml
                             ruby -rjson -e 'sqube = JSON.load(File.read("coverage/.resultset.json"))["RSpec"]["coverage"].transform_values {|lines| lines["lines"]}; total = { "RSpec" => { "coverage" => sqube, "timestamp" => Time.now.to_i }}; puts JSON.dump(total)' > coverage/.resultset.solarqube.json
                         ''')
@@ -55,7 +54,7 @@ pipeline {
         }
         stage('SonarQube Quality Gate') {
             steps {
-                echo 'Send quality'
+                echo 'Check quality..'
                 script {
                     def scannerHome = tool 'sonarqube-scanner';
                     def sonarqubeBranch = 'chartman2-backend-dev';
@@ -81,7 +80,6 @@ pipeline {
         }
         stage("Quality Gate") {
             steps {
-                echo 'Check quality'
                 script {
                     timeout(time: 1, unit: 'HOURS') {
                         def qualitygate = waitForQualityGate()
@@ -116,8 +114,6 @@ pipeline {
                                     echo err.getMessage()
                                 }
                                 sh """
-                                    git config --global user.email "chartmann.35@gmail.com"
-                                    git config --global user.name "Christophe Hartmann"
                                     git add .
                                     git commit -m "Github update"
                                     git push -f github HEAD:main
