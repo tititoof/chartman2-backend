@@ -8,20 +8,19 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                script {
-                    sh('''#!/bin/zsh
-                        git config --global user.name "Christophe Hartmann"
-                        git config --global user.email "chartmann.35@gmail.com"
-                        . ~/.rvm/scripts/rvm
-
-                        rvm install ruby-3.0.2
-                        rvm use ruby-3.0.2
-                        rvm -v
-                        ruby -v
-                        gem -v
-                        gem install bundler
-                    ''')
-                }
+                // script {
+                sh('''#!/bin/zsh
+                    git config --global user.name "Christophe Hartmann"
+                    git config --global user.email "chartmann.35@gmail.com"
+                    . ~/.rvm/scripts/rvm
+                    rvm install ruby-3.0.2
+                    rvm use ruby-3.0.2
+                    rvm -v
+                    ruby -v
+                    gem -v
+                    gem install bundler
+                ''')
+                // }
             }
         }
         stage('Test') {
