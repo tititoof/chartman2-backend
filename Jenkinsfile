@@ -8,19 +8,17 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                // script {
-                sh('''#!/bin/zsh
-                    git config --global user.name "Christophe Hartmann"
-                    git config --global user.email "chartmann.35@gmail.com"
-                    . ~/.rvm/scripts/rvm
-                    rvm install ruby-3.0.2
-                    rvm use ruby-3.0.2
-                    rvm -v
-                    ruby -v
-                    gem -v
-                    gem install bundler
-                ''')
-                // }
+                script {
+                    sh '''
+                        . ~/.rvm/scripts/rvm
+                        rvm install ruby-3.0.2
+                        rvm use ruby-3.0.2
+                        rvm -v
+                        ruby -v
+                        gem -v
+                        gem install bundler
+                    '''
+                }
             }
         }
         stage('Test') {
@@ -28,7 +26,7 @@ pipeline {
                 echo 'Testing..'
                 script {
                     withCredentials([string(credentialsId: 'chartman2-test-key', variable: 'TEST_CREDENTIALS')]) {
-                        sh('''#!/bin/zsh
+                        sh('''
                             . ~/.rvm/scripts/rvm &> /dev/null
                             rvm use ruby-3.0.2
                             gem cleanup
@@ -40,7 +38,7 @@ pipeline {
                             ruby -rjson -e 'sqube = JSON.load(File.read("coverage/.resultset.json"))["RSpec"]["coverage"].transform_values {|lines| lines["lines"]}; total = { "RSpec" => { "coverage" => sqube, "timestamp" => Time.now.to_i }}; puts JSON.dump(total)' > coverage/.resultset.solarqube.json
                         ''')
                         try {
-                            sh """#!/bin/zsh
+                            sh """
                                 . ~/.rvm/scripts/rvm &> /dev/null
                                 rvm use ruby-3.0.2
                                 gem install rubocop
