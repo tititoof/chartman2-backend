@@ -3,10 +3,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.2'
+ruby '3.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1', '>= 6.0.3.4'
+gem 'rails', '~> 7.0', '>= 7.0.1'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -32,7 +32,7 @@ gem 'rubocop-rspec', require: false
 
 # Authenticate
 gem 'devise'
-gem 'devise_token_auth'
+gem 'devise_token_auth', '>= 1.2.0', git: "https://github.com/lynndylanhurley/devise_token_auth"
 
 # Serializer
 gem 'jsonapi-serializer'
@@ -72,6 +72,8 @@ group :development, :test do
   gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
   # Typechecker
   gem 'sorbet-rails'
+  # Security tests
+  gem 'brakeman'
 end
 
 group :development do
@@ -81,6 +83,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'rubocop'
+  # Annotation
+  gem 'annotate'
 end
 
 group :test do
