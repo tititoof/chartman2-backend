@@ -56,8 +56,11 @@ group :development, :test do
   # Validate uniquess and presence
   gem 'shoulda-matchers'
   # Code coverage
-  gem 'simplecov'
-  gem 'simplecov-json'
+  gem 'simplecov', require: false, group: :test
+  gem 'simplecov-json', :require => false, :group => :test
+  gem 'deep-cover', '~> 0.7', group: :test
+  # RSpec formatters
+  gem 'rspec-sonarqube-formatter', '~> 1.5', require: false
   # Deployment
   gem 'capistrano', '~> 3.16', require: false
   gem 'capistrano-rails', '~> 1.6', require: false
