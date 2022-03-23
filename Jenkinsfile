@@ -33,6 +33,7 @@ pipeline {
                                 rvm use ruby-3.1.1
                                 gem cleanup
                                 bundle install
+                                bundle update --bundler
                                 echo "$TEST_CREDENTIALS" > config/credentials/test.key
                                 RAILS_ENV=test bundle exec rake db:create
                                 RAILS_ENV=test bundle exec rake db:migrate
