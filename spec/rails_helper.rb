@@ -1,5 +1,15 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+require 'simplecov-json'
+
+if ENV['RAILS_ENV'] == 'test'
+  SimpleCov.start 'rails' do
+    SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
+  end
+  puts "required simplecov"
+end
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -7,6 +17,7 @@ require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -32,6 +43,7 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -64,6 +76,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include RequestSpecHelper, type: :request
+
   Shoulda::Matchers.configure do |conf|
     conf.integrate do |with|
       with.test_framework :rspec

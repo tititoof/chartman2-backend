@@ -15,13 +15,6 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-require 'simplecov'
-require 'simplecov-json'
-
-SimpleCov.start 'rails' do
-  SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
-end
-
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
