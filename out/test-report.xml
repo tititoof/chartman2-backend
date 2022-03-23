@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
   <file path="./spec/models/article_spec.rb">
-    <testCase name="is expected to belong to category required: true" duration="247" />
-    <testCase name="is expected to belong to post required: true" duration="15" />
+    <testCase name="is expected to belong to category required: true" duration="242" />
+    <testCase name="is expected to belong to post required: true" duration="17" />
   </file>
   <file path="./spec/models/category_spec.rb">
-    <testCase name="is valid with valid attributes" duration="33" />
+    <testCase name="is valid with valid attributes" duration="36" />
     <testCase name="is not valid without a name" duration="16" />
   </file>
   <file path="./spec/models/post_spec.rb">
-    <testCase name="is valid with attributes" duration="109" />
-    <testCase name="is not valid without title" duration="48" />
+    <testCase name="is valid with attributes" duration="102" />
+    <testCase name="is not valid without title" duration="45" />
     <testCase name="is not valid without content" duration="48" />
-    <testCase name="is not valid without published" duration="52" />
+    <testCase name="is not valid without published" duration="48" />
     <testCase name="is not valid without published_at" duration="47" />
-    <testCase name="is expected to belong to user required: true" duration="51" />
-    <testCase name="is expected to have many categories" duration="31" />
+    <testCase name="is expected to belong to user required: true" duration="50" />
+    <testCase name="is expected to have many categories" duration="32" />
   </file>
   <file path="./spec/models/user_spec.rb">
-    <testCase name="is valid with valid attributes" duration="225" />
-    <testCase name="is not valid without a name" duration="230" />
+    <testCase name="is valid with valid attributes" duration="220" />
+    <testCase name="is not valid without a name" duration="216" />
     <testCase name="is not valid without an email" duration="217" />
     <testCase name="is not valid without a password" duration="220" />
-    <testCase name="is expected to allow :email to be ‹&apos;user@example.com&apos;›" duration="217" />
-    <testCase name="is expected not to allow :email to be ‹&apos;not-an-email&apos;›" duration="220" />
-    <testCase name="is expected to have many posts" duration="213" />
+    <testCase name="is expected to allow :email to be ‹&apos;user@example.com&apos;›" duration="219" />
+    <testCase name="is expected not to allow :email to be ‹&apos;not-an-email&apos;›" duration="227" />
+    <testCase name="is expected to have many posts" duration="211" />
   </file>
   <file path="./spec/requests/articles_request_spec.rb">
-    <testCase name="show articles from category" duration="83" />
-    <testCase name="show article" duration="325" />
+    <testCase name="show articles from category" duration="91" />
+    <testCase name="show article" duration="328" />
     <testCase name="show category" duration="60" />
-    <testCase name="show categories" duration="77" />
+    <testCase name="show categories" duration="78" />
   </file>
   <file path="./spec/requests/authorization_request_spec.rb">
     <testCase name="gives you an authentication code if you are an existing user and you satisfy the password" duration="510" />
   </file>
   <file path="./spec/requests/categories_request_spec.rb">
-    <testCase name="get all categories" duration="520" />
-    <testCase name="create a category" duration="523" />
-    <testCase name="cannot create a category with wrong parameter" duration="513" />
-    <testCase name="show a category" duration="548" />
-    <testCase name="update a category name" duration="552" />
-    <testCase name="destroy a category" duration="562" />
+    <testCase name="get all categories" duration="527" />
+    <testCase name="create a category" duration="540" />
+    <testCase name="cannot create a category with wrong parameter" duration="517" />
+    <testCase name="show a category" duration="541" />
+    <testCase name="update a category name" duration="570" />
+    <testCase name="destroy a category" duration="551" />
   </file>
   <file path="./spec/requests/posts_request_spec.rb">
-    <testCase name="get all posts from index" duration="513" />
-    <testCase name="create a post" duration="599" />
-    <testCase name="not create with wrong parameter" duration="550" />
-    <testCase name="show a post" duration="795" />
-    <testCase name="not show a wrong post" duration="495" />
-    <testCase name="update a post" duration="863" />
-    <testCase name="update a post with wrong parameters" duration="815" />
-    <testCase name="not update a wrong post" duration="525" />
-    <testCase name="publish a post" duration="843" />
-    <testCase name="publish a wrong post" duration="522" />
-    <testCase name="destroy a post" duration="848" />
-    <testCase name="not destroy a wrong post" duration="508" />
+    <testCase name="get all posts from index" duration="516" />
+    <testCase name="create a post" duration="575" />
+    <testCase name="not create with wrong parameter" duration="545" />
+    <testCase name="show a post" duration="797" />
+    <testCase name="not show a wrong post" duration="513" />
+    <testCase name="update a post" duration="856" />
+    <testCase name="update a post with wrong parameters" duration="836" />
+    <testCase name="not update a wrong post" duration="531" />
+    <testCase name="publish a post" duration="825" />
+    <testCase name="publish a wrong post" duration="506" />
+    <testCase name="destroy a post" duration="823" />
+    <testCase name="not destroy a wrong post" duration="510" />
   </file>
   <file path="./spec/requests/users_request_spec.rb">
-    <testCase name="show current user" duration="503" />
+    <testCase name="show current user" duration="506" />
   </file>
 </testExecutions>
