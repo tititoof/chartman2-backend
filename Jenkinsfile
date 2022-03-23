@@ -47,6 +47,9 @@ pipeline {
                             echo "Rubocop error "
                             echo err.getMessage()
                         }
+                        sh """
+                            bundle exec brakeman -A -q --color -o /dev/stdout -o brakeman.json
+                        """
                         echo 'Finished tests!'
                     }
                 }
