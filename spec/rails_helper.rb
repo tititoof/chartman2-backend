@@ -6,6 +6,7 @@ require 'simplecov-json'
 if ENV['RAILS_ENV'] == 'test'
   SimpleCov.start 'rails' do
     SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
+    add_filter 'test'
   end
   puts "required simplecov"
 end
