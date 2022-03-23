@@ -11,8 +11,8 @@ pipeline {
                 script {
                     sh '''
                         . ~/.rvm/scripts/rvm
-                        rvm install ruby-3.0.2
-                        rvm use ruby-3.0.2
+                        rvm install ruby-3.1.1
+                        rvm use ruby-3.1.1
                         rvm -v
                         ruby -v
                         gem -v
@@ -28,7 +28,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'chartman2-test-key', variable: 'TEST_CREDENTIALS')]) {
                         sh('''
                             . ~/.rvm/scripts/rvm &> /dev/null
-                            rvm use ruby-3.0.2
+                            rvm use ruby-3.1.1
                             gem cleanup
                             bundle install
                             echo "$TEST_CREDENTIALS" > config/credentials/test.key
@@ -40,7 +40,7 @@ pipeline {
                         try {
                             sh """
                                 . ~/.rvm/scripts/rvm &> /dev/null
-                                rvm use ruby-3.0.2
+                                rvm use ruby-3.1.1
                                 gem install rubocop
                                 bundle exec rubocop app --format json --out rubocop-result.json"""
                         } catch (err) {
@@ -48,6 +48,7 @@ pipeline {
                             echo err.getMessage()
                         }
                         sh """
+                            rvm use ruby-3.1.1
                             bundle exec brakeman -A -q --color -o /dev/stdout -o brakeman.json
                         """
                         echo 'Finished tests!'
