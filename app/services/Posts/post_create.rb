@@ -21,9 +21,7 @@ module Posts
 
       { success: true, payload: post, status: :ok }
     rescue ActiveRecord::RecordInvalid => e
-      { success: false, errors: e.record.errors, status: ActiveRecord::RecordInvalid }
-    rescue ActiveRecord::RecordNotFound => e
-      { success: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound }
+      { success: false, errors: 'invalid record', status: ActiveRecord::RecordInvalid }
     end
   end
 end
