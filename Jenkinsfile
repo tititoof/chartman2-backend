@@ -36,9 +36,8 @@ pipeline {
                                 echo "$TEST_CREDENTIALS" > config/credentials/test.key
                                 RAILS_ENV=test bundle exec rake db:create
                                 RAILS_ENV=test bundle exec rake db:migrate
-                                RAILS_ENV=test bundle exec rspec spec/* --format html --out rspec_results/results.html --format RspecJunitFormatter --out rspec_results/results.xml
+                                RAILS_ENV=test bundle exec rspec spec/* --format html --out rspec_results/results.html --format RspecJunitFormatter --out rspec_results/results.xml --format json --out coverage/.resultset.json
                                 ruby -rjson -e 'sqube = JSON.load(File.read("coverage/.resultset.json"))["RSpec"]["coverage"].transform_values {|lines| lines["lines"]}; total = { "RSpec" => { "coverage" => sqube, "timestamp" => Time.now.to_i }}; puts JSON.dump(total)' > coverage/.resultset.solarqube.json
-                                bundle exec brakeman -A -q --color -o /dev/stdout -o brakeman.json
                             ''')
                         } catch (err) {
                             echo "Rspec error "
@@ -54,6 +53,9 @@ pipeline {
                             echo "Rubocop error "
                             echo err.getMessage()
                         }
+                        sh '''
+                            bundle exec brakeman -A -q --color -o /dev/stdout -o brakeman.json()
+                        '''
                         
                         echo 'Finished tests!'
                     }
