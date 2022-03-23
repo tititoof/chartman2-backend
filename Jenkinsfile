@@ -81,7 +81,7 @@ pipeline {
                                         -Dsonar.host.url=$SONAR_URL \
                                         -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.solarqube.json \
                                         -Dsonar.ruby.rubocop.reportPaths=rubocop-result.json \
-                                        -Dsonar.testExecutionReportPaths=out/test-report.xml
+                                        -Dsonar.testExecutionReportPaths=out/test-report.xml \
                                         -Dsonar.login=$SONAR_CREDENTIALS"""
                             }
                         }
