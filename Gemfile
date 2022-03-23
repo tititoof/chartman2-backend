@@ -29,6 +29,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rack-cors'
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
+# Code coverage
+gem 'simplecov', require: false, group: :test
+gem 'simplecov-json', :require => false, :group => :test
+gem 'deep-cover', '~> 0.7', group: :test
 
 # Authenticate
 gem 'devise'
@@ -55,10 +59,6 @@ group :development, :test do
   gem 'json-schema'
   # Validate uniquess and presence
   gem 'shoulda-matchers'
-  # Code coverage
-  gem 'simplecov', require: false, group: :test
-  gem 'simplecov-json', :require => false, :group => :test
-  gem 'deep-cover', '~> 0.7', group: :test
   # RSpec formatters
   gem 'rspec-sonarqube-formatter', '~> 1.5', require: false
   # Deployment
@@ -73,8 +73,6 @@ group :development, :test do
   # Ed25519 keys support
   gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
   gem 'ed25519', '>= 1.2', '< 2.0'
-  # Typechecker
-  gem 'sorbet-rails'
   # Security tests
   gem 'brakeman'
 end
