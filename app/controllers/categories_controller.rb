@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
 
   # list all categories
   def index
-    @category = { success?: true, payload: Category.all, status: :ok }
+    @category = { success: true, payload: Category.all, status: :ok }
 
     render_json
   end
@@ -43,10 +43,10 @@ class CategoriesController < ApplicationController
 
   # render json success with object serialized or object with error(s)
   def render_json
-    if @category.success?
-      render json: CategorySerializer.new(@category.payload)
+    if @category[:success]
+      render json: CategorySerializer.new(@category[:payload])
     else
-      render json: @category.errors, status: :precondition_failed
+      render json: @category[:errors], status: :precondition_failed
     end
   end
 

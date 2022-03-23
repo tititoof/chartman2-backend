@@ -12,9 +12,9 @@ module Posts
     def execute
       post = Post.find(@id)
 
-      { success?: true, payload: post, status: :ok }
+      { success: true, payload: post, status: :ok }
     rescue ActiveRecord::RecordNotFound => e
-      { success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound }
+      { success: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound }
     end
   end
 end

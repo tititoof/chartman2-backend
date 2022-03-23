@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   # list posts
   def index
-    @post = { success?: true, payload: Post.all, status: :ok }
+    @post = { success: true, payload: Post.all, status: :ok }
 
     render_json
   end
@@ -63,10 +63,10 @@ class PostsController < ApplicationController
 
   # render json or errors
   def render_json
-    if @post.success?
-      render json: PostSerializer.new(@post.payload)
+    if @post[:success]
+      render json: PostSerializer.new(@post[:payload])
     else
-      render json: @post.errors, status: :precondition_failed
+      render json: @post[:errors], status: :precondition_failed
     end
   end
 

@@ -12,9 +12,9 @@ module Categories
     def execute
       category = Category.find(@id)
 
-      { success?: true, payload: category, status: :ok }
+      { success: true, payload: category, status: :ok }
     rescue ActiveRecord::RecordNotFound => e
-      { success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound }
+      { success: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound }
     end
   end
 end

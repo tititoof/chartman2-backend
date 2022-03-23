@@ -15,9 +15,9 @@ module Categories
 
       category.update!(name: @name)
 
-      { success?: true, payload: category, status: :ok }
+      { success: true, payload: category, status: :ok }
     rescue ActiveRecord::RecordInvalid => e
-      { success?: false, errors: e.record.errors, status: ActiveRecord::RecordInvalid }
+      { success: false, errors: e.record.errors, status: ActiveRecord::RecordInvalid }
     end
   end
 end

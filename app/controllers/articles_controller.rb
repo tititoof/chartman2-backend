@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
 
   # show categories
   def categories
-    @data = { success?: true, payload: Category.all, status: :ok }
+    @data = { success: true, payload: Category.all, status: :ok }
 
     render_json CategorySerializer
   end
@@ -33,10 +33,10 @@ class ArticlesController < ApplicationController
   private
 
   def render_json(serializer)
-    if @data.success?
-      render json: serializer.new(@data.payload)
+    if @data[:success]
+      render json: serializer.new(@data[:payload])
     else
-      render json: @data.errors, status: :precondition_failed
+      render json: @data[:errors], status: :precondition_failed
     end
   end
 
