@@ -38,8 +38,7 @@ pipeline {
                                 echo "$TEST_CREDENTIALS" > config/credentials/test.key
                                 bundle exec rake db:create
                                 bundle exec rake db:migrate
-                                bundle exec rake parallel:setup
-                                RAILS_ENV=test bundle exec rake parallel:spec
+                                RAILS_ENV=test bundle exec rspec
                                 ruby -rjson -e 'sqube = JSON.load(File.read("coverage/.resultset.json"))["RSpec"]["coverage"].transform_values {|lines| lines["lines"]}; total = { "RSpec" => { "coverage" => sqube, "timestamp" => Time.now.to_i }}; puts JSON.dump(total)' > coverage/.resultset.solarqube.json
                                 bundle exec brakeman -A -q --color -o /dev/stdout -o brakeman.json
                             '''
