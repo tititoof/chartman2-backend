@@ -17,6 +17,7 @@ pipeline {
                         ruby -v
                         gem -v
                         gem install bundler
+                        bundle update --bundler
                     '''
                 }
             }

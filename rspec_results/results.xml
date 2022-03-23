@@ -1,43 +1,521 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="37" skipped="0" failures="0" errors="0" time="11.657624" timestamp="2022-03-23T10:36:01+01:00" hostname="christophe-linux">
+<testsuite name="rspec" tests="37" skipped="0" failures="17" errors="0" time="11.567105" timestamp="2022-03-23T10:55:35+01:00" hostname="christophe-linux">
 <properties>
-<property name="seed" value="16438"/>
+<property name="seed" value="36904"/>
 </properties>
-<testcase classname="spec.models.article_spec" name="Article associations is expected to belong to category required: true" file="./spec/models/article_spec.rb" time="0.182380"></testcase>
-<testcase classname="spec.models.article_spec" name="Article associations is expected to belong to post required: true" file="./spec/models/article_spec.rb" time="0.012089"></testcase>
-<testcase classname="spec.models.category_spec" name="Category is valid with valid attributes" file="./spec/models/category_spec.rb" time="0.028995"></testcase>
-<testcase classname="spec.models.category_spec" name="Category is not valid without a name" file="./spec/models/category_spec.rb" time="0.016659"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is valid with attributes" file="./spec/models/post_spec.rb" time="0.103398"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is not valid without title" file="./spec/models/post_spec.rb" time="0.041844"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is not valid without content" file="./spec/models/post_spec.rb" time="0.042692"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is not valid without published" file="./spec/models/post_spec.rb" time="0.043299"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is not valid without published_at" file="./spec/models/post_spec.rb" time="0.044703"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is expected to belong to user required: true" file="./spec/models/post_spec.rb" time="0.047136"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is expected to have many categories" file="./spec/models/post_spec.rb" time="0.027414"></testcase>
-<testcase classname="spec.models.user_spec" name="User is valid with valid attributes" file="./spec/models/user_spec.rb" time="0.224421"></testcase>
-<testcase classname="spec.models.user_spec" name="User is not valid without a name" file="./spec/models/user_spec.rb" time="0.225917"></testcase>
-<testcase classname="spec.models.user_spec" name="User is not valid without an email" file="./spec/models/user_spec.rb" time="0.212467"></testcase>
-<testcase classname="spec.models.user_spec" name="User is not valid without a password" file="./spec/models/user_spec.rb" time="0.218821"></testcase>
-<testcase classname="spec.models.user_spec" name="User is expected to allow :email to be ‹&quot;user@example.com&quot;›" file="./spec/models/user_spec.rb" time="0.215619"></testcase>
-<testcase classname="spec.models.user_spec" name="User is expected not to allow :email to be ‹&quot;not-an-email&quot;›" file="./spec/models/user_spec.rb" time="0.217009"></testcase>
-<testcase classname="spec.models.user_spec" name="User is expected to have many posts" file="./spec/models/user_spec.rb" time="0.210586"></testcase>
-<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show articles from category" file="./spec/requests/articles_request_spec.rb" time="0.068564"></testcase>
-<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show article" file="./spec/requests/articles_request_spec.rb" time="0.318161"></testcase>
-<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show category" file="./spec/requests/articles_request_spec.rb" time="0.052945"></testcase>
-<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show categories" file="./spec/requests/articles_request_spec.rb" time="0.065995"></testcase>
-<testcase classname="spec.requests.authorization_request_spec" name="Authorization gives you an authentication code if you are an existing user and you satisfy the password" file="./spec/requests/authorization_request_spec.rb" time="0.504739"></testcase>
-<testcase classname="spec.requests.categories_request_spec" name="CategoriesController get all categories" file="./spec/requests/categories_request_spec.rb" time="0.513490"></testcase>
-<testcase classname="spec.requests.categories_request_spec" name="CategoriesController create a category" file="./spec/requests/categories_request_spec.rb" time="0.515952"></testcase>
-<testcase classname="spec.requests.categories_request_spec" name="CategoriesController cannot create a category with wrong parameter" file="./spec/requests/categories_request_spec.rb" time="0.518456"></testcase>
-<testcase classname="spec.requests.categories_request_spec" name="CategoriesController show a category" file="./spec/requests/categories_request_spec.rb" time="0.537451"></testcase>
-<testcase classname="spec.requests.categories_request_spec" name="CategoriesController update a category name" file="./spec/requests/categories_request_spec.rb" time="0.540996"></testcase>
-<testcase classname="spec.requests.categories_request_spec" name="CategoriesController destroy a category" file="./spec/requests/categories_request_spec.rb" time="0.549369"></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController get all posts from index" file="./spec/requests/posts_request_spec.rb" time="0.497945"></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController create a post" file="./spec/requests/posts_request_spec.rb" time="0.563076"></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController not create with wrong parameter" file="./spec/requests/posts_request_spec.rb" time="0.546687"></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController show a post" file="./spec/requests/posts_request_spec.rb" time="0.789232"></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController update a post" file="./spec/requests/posts_request_spec.rb" time="0.821971"></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController publish a post" file="./spec/requests/posts_request_spec.rb" time="0.809691"></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController destroy a post" file="./spec/requests/posts_request_spec.rb" time="0.815677"></testcase>
-<testcase classname="spec.requests.users_request_spec" name="UsersController show current user" file="./spec/requests/users_request_spec.rb" time="0.490445"></testcase>
+<testcase classname="spec.models.article_spec" name="Article associations is expected to belong to category required: true" file="./spec/models/article_spec.rb" time="0.201880"></testcase>
+<testcase classname="spec.models.article_spec" name="Article associations is expected to belong to post required: true" file="./spec/models/article_spec.rb" time="0.013233"></testcase>
+<testcase classname="spec.models.category_spec" name="Category is valid with valid attributes" file="./spec/models/category_spec.rb" time="0.031239"></testcase>
+<testcase classname="spec.models.category_spec" name="Category is not valid without a name" file="./spec/models/category_spec.rb" time="0.014119"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is valid with attributes" file="./spec/models/post_spec.rb" time="0.098194"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is not valid without title" file="./spec/models/post_spec.rb" time="0.045163"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is not valid without content" file="./spec/models/post_spec.rb" time="0.045895"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is not valid without published" file="./spec/models/post_spec.rb" time="0.046710"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is not valid without published_at" file="./spec/models/post_spec.rb" time="0.049737"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is expected to belong to user required: true" file="./spec/models/post_spec.rb" time="0.046454"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is expected to have many categories" file="./spec/models/post_spec.rb" time="0.029686"></testcase>
+<testcase classname="spec.models.user_spec" name="User is valid with valid attributes" file="./spec/models/user_spec.rb" time="0.223662"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without a name" file="./spec/models/user_spec.rb" time="0.223143"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without an email" file="./spec/models/user_spec.rb" time="0.216009"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without a password" file="./spec/models/user_spec.rb" time="0.222484"></testcase>
+<testcase classname="spec.models.user_spec" name="User is expected to allow :email to be ‹&quot;user@example.com&quot;›" file="./spec/models/user_spec.rb" time="0.221992"></testcase>
+<testcase classname="spec.models.user_spec" name="User is expected not to allow :email to be ‹&quot;not-an-email&quot;›" file="./spec/models/user_spec.rb" time="0.213248"></testcase>
+<testcase classname="spec.models.user_spec" name="User is expected to have many posts" file="./spec/models/user_spec.rb" time="0.217374"></testcase>
+<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show articles from category" file="./spec/requests/articles_request_spec.rb" time="0.071308"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
+
+    if @data.success?
+            ^^^^^^^^^" type="NoMethodError">Failure/Error: if @data.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
+
+      if @data.success?
+              ^^^^^^^^^
+./app/controllers/articles_controller.rb:36:in `render_json&apos;
+./app/controllers/articles_controller.rb:9:in `from_category&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/articles_request_spec.rb:13:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show article" file="./spec/requests/articles_request_spec.rb" time="0.291538"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;9df39829-36bc-4365-8a54-a25edb08140d&quot;, title: &quot;De Vermis Mysteriis&quot;, content: &quot;Effulgence squamous lurk cyclopean abnormal tenebr...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:38.407233000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:38.407233000 +0000&quot;, description: &quot;[\&quot;Manuscript comprehension spectral gambrel fungus...&quot;, user_id: &quot;22bd158d-e19c-4ea1-8128-f8112fdfe3dd&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+
+    if @data.success?
+            ^^^^^^^^^" type="NoMethodError">Failure/Error: if @data.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;9df39829-36bc-4365-8a54-a25edb08140d&quot;, title: &quot;De Vermis Mysteriis&quot;, content: &quot;Effulgence squamous lurk cyclopean abnormal tenebr...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:38.407233000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:38.407233000 +0000&quot;, description: &quot;[\&quot;Manuscript comprehension spectral gambrel fungus...&quot;, user_id: &quot;22bd158d-e19c-4ea1-8128-f8112fdfe3dd&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+
+      if @data.success?
+              ^^^^^^^^^
+./app/controllers/articles_controller.rb:36:in `render_json&apos;
+./app/controllers/articles_controller.rb:16:in `show&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/articles_request_spec.rb:21:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show category" file="./spec/requests/articles_request_spec.rb" time="0.043552"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;e9941a62-43bb-4f48-b4f4-dc645820fa06&quot;, name: &quot;The State of the Art&quot;, created_at: &quot;2022-03-23 09:55:38.468841000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:38.468841000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+
+    if @data.success?
+            ^^^^^^^^^" type="NoMethodError">Failure/Error: if @data.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;e9941a62-43bb-4f48-b4f4-dc645820fa06&quot;, name: &quot;The State of the Art&quot;, created_at: &quot;2022-03-23 09:55:38.468841000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:38.468841000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+
+      if @data.success?
+              ^^^^^^^^^
+./app/controllers/articles_controller.rb:36:in `render_json&apos;
+./app/controllers/articles_controller.rb:30:in `category&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/articles_request_spec.rb:30:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show categories" file="./spec/requests/articles_request_spec.rb" time="0.066609"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
+
+    if @data.success?
+            ^^^^^^^^^" type="NoMethodError">Failure/Error: if @data.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
+
+      if @data.success?
+              ^^^^^^^^^
+./app/controllers/articles_controller.rb:36:in `render_json&apos;
+./app/controllers/articles_controller.rb:23:in `categories&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/articles_request_spec.rb:41:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.authorization_request_spec" name="Authorization gives you an authentication code if you are an existing user and you satisfy the password" file="./spec/requests/authorization_request_spec.rb" time="0.489759"></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController get all categories" file="./spec/requests/categories_request_spec.rb" time="0.501373"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
+
+    if @category.success?
+                ^^^^^^^^^" type="NoMethodError">Failure/Error: if @category.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
+
+      if @category.success?
+                  ^^^^^^^^^
+./app/controllers/categories_controller.rb:46:in `render_json&apos;
+./app/controllers/categories_controller.rb:11:in `index&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/categories_request_spec.rb:19:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController create a category" file="./spec/requests/categories_request_spec.rb" time="0.501565"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;a5901b94-0ad9-43ce-803c-0fde77a41df3&quot;, name: &quot;test&quot;, created_at: &quot;2022-03-23 09:55:40.072331000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:40.072331000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+
+    if @category.success?
+                ^^^^^^^^^" type="NoMethodError">Failure/Error: if @category.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;a5901b94-0ad9-43ce-803c-0fde77a41df3&quot;, name: &quot;test&quot;, created_at: &quot;2022-03-23 09:55:40.072331000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:40.072331000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+
+      if @category.success?
+                  ^^^^^^^^^
+./app/controllers/categories_controller.rb:46:in `render_json&apos;
+./app/controllers/categories_controller.rb:18:in `create&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:40:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/categories_request_spec.rb:27:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController cannot create a category with wrong parameter" file="./spec/requests/categories_request_spec.rb" time="0.512877"><failure message="undefined method `success?&apos; for {:success?=&gt;false, :errors=&gt;#&lt;ActiveModel::Errors [#&lt;ActiveModel::Error attribute=name, type=blank, options={}&gt;]&gt;, :status=&gt;ActiveRecord::RecordInvalid}:Hash
+
+    if @category.success?
+                ^^^^^^^^^" type="NoMethodError">Failure/Error: if @category.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;false, :errors=&gt;#&lt;ActiveModel::Errors [#&lt;ActiveModel::Error attribute=name, type=blank, options={}&gt;]&gt;, :status=&gt;ActiveRecord::RecordInvalid}:Hash
+
+      if @category.success?
+                  ^^^^^^^^^
+./app/controllers/categories_controller.rb:46:in `render_json&apos;
+./app/controllers/categories_controller.rb:18:in `create&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:40:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/categories_request_spec.rb:36:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController show a category" file="./spec/requests/categories_request_spec.rb" time="0.514903"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;fdbe0cb9-6ae0-4f62-a574-e411c6f506e3&quot;, name: &quot;Excession&quot;, created_at: &quot;2022-03-23 09:55:41.092906000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:41.092906000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+
+    if @category.success?
+                ^^^^^^^^^" type="NoMethodError">Failure/Error: if @category.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;fdbe0cb9-6ae0-4f62-a574-e411c6f506e3&quot;, name: &quot;Excession&quot;, created_at: &quot;2022-03-23 09:55:41.092906000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:41.092906000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+
+      if @category.success?
+                  ^^^^^^^^^
+./app/controllers/categories_controller.rb:46:in `render_json&apos;
+./app/controllers/categories_controller.rb:25:in `show&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/categories_request_spec.rb:44:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController update a category name" file="./spec/requests/categories_request_spec.rb" time="0.533797"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;f2c8994d-625b-473f-ab71-25970c5de25e&quot;, name: &quot;Consider Phlebas changed&quot;, created_at: &quot;2022-03-23 09:55:41.611303000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:41.644767000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+
+    if @category.success?
+                ^^^^^^^^^" type="NoMethodError">Failure/Error: if @category.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;f2c8994d-625b-473f-ab71-25970c5de25e&quot;, name: &quot;Consider Phlebas changed&quot;, created_at: &quot;2022-03-23 09:55:41.611303000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:41.644767000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+
+      if @category.success?
+                  ^^^^^^^^^
+./app/controllers/categories_controller.rb:46:in `render_json&apos;
+./app/controllers/categories_controller.rb:32:in `update&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:40:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/categories_request_spec.rb:54:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController destroy a category" file="./spec/requests/categories_request_spec.rb" time="0.518101"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;43ea7ca1-bdb7-45cf-a30f-08a855ec94cf&quot;, name: &quot;Consider Phlebas&quot;, created_at: &quot;2022-03-23 09:55:42.136051000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:42.136051000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+
+    if @category.success?
+                ^^^^^^^^^" type="NoMethodError">Failure/Error: if @category.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;43ea7ca1-bdb7-45cf-a30f-08a855ec94cf&quot;, name: &quot;Consider Phlebas&quot;, created_at: &quot;2022-03-23 09:55:42.136051000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:42.136051000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+
+      if @category.success?
+                  ^^^^^^^^^
+./app/controllers/categories_controller.rb:46:in `render_json&apos;
+./app/controllers/categories_controller.rb:39:in `destroy&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:40:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/categories_request_spec.rb:67:in `block (3 levels) in &lt;main&gt;&apos;
+./spec/requests/categories_request_spec.rb:66:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController get all posts from index" file="./spec/requests/posts_request_spec.rb" time="0.505221"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
+
+    if @post.success?
+            ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
+
+      if @post.success?
+              ^^^^^^^^^
+./app/controllers/posts_controller.rb:66:in `render_json&apos;
+./app/controllers/posts_controller.rb:11:in `index&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/posts_request_spec.rb:19:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController create a post" file="./spec/requests/posts_request_spec.rb" time="0.585592"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;8146ee71-cd22-4274-997a-a3cd362a3b2b&quot;, title: &quot;test&quot;, content: &quot;gnagnagna&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:43.237058000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:43.237058000 +0000&quot;, description: &quot;petite description&quot;, user_id: &quot;5fcaf280-ce44-4b75-8c1f-b4acd18e35e8&quot;, published: nil&gt;, :status=&gt;:ok}:Hash
+
+    if @post.success?
+            ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;8146ee71-cd22-4274-997a-a3cd362a3b2b&quot;, title: &quot;test&quot;, content: &quot;gnagnagna&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:43.237058000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:43.237058000 +0000&quot;, description: &quot;petite description&quot;, user_id: &quot;5fcaf280-ce44-4b75-8c1f-b4acd18e35e8&quot;, published: nil&gt;, :status=&gt;:ok}:Hash
+
+      if @post.success?
+              ^^^^^^^^^
+./app/controllers/posts_controller.rb:66:in `render_json&apos;
+./app/controllers/posts_controller.rb:24:in `create&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:40:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/posts_request_spec.rb:28:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController not create with wrong parameter" file="./spec/requests/posts_request_spec.rb" time="0.516810"><failure message="undefined method `success?&apos; for {:success?=&gt;false, :errors=&gt;#&lt;ActiveModel::Errors [#&lt;ActiveModel::Error attribute=description, type=blank, options={}&gt;]&gt;, :status=&gt;ActiveRecord::RecordInvalid}:Hash
+
+    if @post.success?
+            ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;false, :errors=&gt;#&lt;ActiveModel::Errors [#&lt;ActiveModel::Error attribute=description, type=blank, options={}&gt;]&gt;, :status=&gt;ActiveRecord::RecordInvalid}:Hash
+
+      if @post.success?
+              ^^^^^^^^^
+./app/controllers/posts_controller.rb:66:in `render_json&apos;
+./app/controllers/posts_controller.rb:24:in `create&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:40:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/posts_request_spec.rb:38:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController show a post" file="./spec/requests/posts_request_spec.rb" time="0.753876"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;c7e13449-67aa-4396-95cf-68ce45742423&quot;, title: &quot;Eltdown Shards&quot;, content: &quot;Madness iridescence fungus ululate fainted cyclope...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:44.530012000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:44.530012000 +0000&quot;, description: &quot;[\&quot;Dank gibbering swarthy iridescence ululate amorp...&quot;, user_id: &quot;809f5ff8-9193-475e-bac7-0e153fc1051c&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+
+    if @post.success?
+            ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;c7e13449-67aa-4396-95cf-68ce45742423&quot;, title: &quot;Eltdown Shards&quot;, content: &quot;Madness iridescence fungus ululate fainted cyclope...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:44.530012000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:44.530012000 +0000&quot;, description: &quot;[\&quot;Dank gibbering swarthy iridescence ululate amorp...&quot;, user_id: &quot;809f5ff8-9193-475e-bac7-0e153fc1051c&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+
+      if @post.success?
+              ^^^^^^^^^
+./app/controllers/posts_controller.rb:66:in `render_json&apos;
+./app/controllers/posts_controller.rb:31:in `show&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/posts_request_spec.rb:46:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController update a post" file="./spec/requests/posts_request_spec.rb" time="0.800823"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;0ec3e6fb-5c74-4f11-8fc4-eb8fa0e1f540&quot;, title: &quot;De Vermis Mysteriis changed&quot;, content: &quot;Stygian daemoniac tentacles mortal. Charnel unutte...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:45.283212000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:45.337206000 +0000&quot;, description: &quot;[\&quot;Hideous amorphous effulgence tentacles abnormal ...&quot;, user_id: &quot;3ade2a75-de3f-47e1-a0ef-c1032aed6832&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+
+    if @post.success?
+            ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;0ec3e6fb-5c74-4f11-8fc4-eb8fa0e1f540&quot;, title: &quot;De Vermis Mysteriis changed&quot;, content: &quot;Stygian daemoniac tentacles mortal. Charnel unutte...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:45.283212000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:45.337206000 +0000&quot;, description: &quot;[\&quot;Hideous amorphous effulgence tentacles abnormal ...&quot;, user_id: &quot;3ade2a75-de3f-47e1-a0ef-c1032aed6832&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+
+      if @post.success?
+              ^^^^^^^^^
+./app/controllers/posts_controller.rb:66:in `render_json&apos;
+./app/controllers/posts_controller.rb:46:in `update&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:40:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/posts_request_spec.rb:56:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController publish a post" file="./spec/requests/posts_request_spec.rb" time="0.794903"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;6144f552-b14a-40d6-8ab1-0f2fdadb9e49&quot;, title: &quot;De Vermis Mysteriis&quot;, content: &quot;Furtive foetid daemoniac tenebrous nameless swarth...&quot;, published_at: &quot;2022-03-23 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 09:55:46.097240000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:46.150991000 +0000&quot;, description: &quot;[\&quot;Blasphemous indescribable gibbering furtive nois...&quot;, user_id: &quot;06a76645-0fd8-4be4-8d8e-c7e6c6cbf4e0&quot;, published: true&gt;, :status=&gt;:ok}:Hash
+
+    if @post.success?
+            ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;6144f552-b14a-40d6-8ab1-0f2fdadb9e49&quot;, title: &quot;De Vermis Mysteriis&quot;, content: &quot;Furtive foetid daemoniac tenebrous nameless swarth...&quot;, published_at: &quot;2022-03-23 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 09:55:46.097240000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:46.150991000 +0000&quot;, description: &quot;[\&quot;Blasphemous indescribable gibbering furtive nois...&quot;, user_id: &quot;06a76645-0fd8-4be4-8d8e-c7e6c6cbf4e0&quot;, published: true&gt;, :status=&gt;:ok}:Hash
+
+      if @post.success?
+              ^^^^^^^^^
+./app/controllers/posts_controller.rb:66:in `render_json&apos;
+./app/controllers/posts_controller.rb:52:in `publish&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:40:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/posts_request_spec.rb:77:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController destroy a post" file="./spec/requests/posts_request_spec.rb" time="0.794676"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;d6842396-ae8a-4ea7-991a-30f5dc9f0d99&quot;, title: &quot;Book of Eibon&quot;, content: &quot;Unutterable fainted tenebrous. Unutterable accurse...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:46.890669000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:46.890669000 +0000&quot;, description: &quot;[\&quot;Daemoniac antiquarian eldritch.\&quot;, \&quot;Stygian tenta...&quot;, user_id: &quot;43ddf1b1-da5c-45e8-bccc-1b7d43d597b1&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+
+    if @post.success?
+            ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
+
+NoMethodError:
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;d6842396-ae8a-4ea7-991a-30f5dc9f0d99&quot;, title: &quot;Book of Eibon&quot;, content: &quot;Unutterable fainted tenebrous. Unutterable accurse...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:46.890669000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:46.890669000 +0000&quot;, description: &quot;[\&quot;Daemoniac antiquarian eldritch.\&quot;, \&quot;Stygian tenta...&quot;, user_id: &quot;43ddf1b1-da5c-45e8-bccc-1b7d43d597b1&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+
+      if @post.success?
+              ^^^^^^^^^
+./app/controllers/posts_controller.rb:66:in `render_json&apos;
+./app/controllers/posts_controller.rb:59:in `destroy&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/conditional_get.rb:40:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/head.rb:12:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:36:in `call_app&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `block in call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/rack/logger.rb:25:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/railties-7.0.2.3/lib/rails/engine.rb:530:in `call&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/posts_request_spec.rb:90:in `block (3 levels) in &lt;main&gt;&apos;
+./spec/requests/posts_request_spec.rb:89:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.users_request_spec" name="UsersController show current user" file="./spec/requests/users_request_spec.rb" time="0.482976"></testcase>
 </testsuite>
