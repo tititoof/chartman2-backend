@@ -11,7 +11,7 @@ RSpec.describe 'PostsController', type: :request do
     @current_user.save
 
     login
-    
+
     @auth_tokens = get_auth_params_from_login_response_headers(response)
   end
 
@@ -22,26 +22,26 @@ RSpec.describe 'PostsController', type: :request do
   end
 
   it 'create a post' do
-    category = FactoryBot.create(:category)
+    category = create(:category)
     post = { title: 'test', description: 'petite description', content: 'gnagnagna', categories: [category.id] }
-    
-    post posts_path, params: { post: post }, headers: @auth_tokens
+
+    post posts_path, params: { post: }, headers: @auth_tokens
 
     expect(response.status).to eq(200)
     expect(response).to match_response_schema('post')
   end
 
   it 'not create with wrong parameter' do
-    category = FactoryBot.create(:category)
+    category = create(:category)
     post = { title: 'test', content: 'gnagnagna', categories: [category.id] }
-    
-    post posts_path, params: { post: post }, headers: @auth_tokens
+
+    post posts_path, params: { post: }, headers: @auth_tokens
 
     expect(response.status).to eq(412)
   end
 
   it 'show a post' do
-    new_post = FactoryBot.create(:post)
+    new_post = create(:post)
 
     get post_path(new_post.id), headers: @auth_tokens
 
@@ -50,11 +50,11 @@ RSpec.describe 'PostsController', type: :request do
   end
 
   it 'update a post' do
-    new_post = FactoryBot.create(:post)
+    new_post = create(:post)
     new_post.title = "#{new_post.title} changed"
-    
+
     put post_path(new_post.id),
-        params: { 
+        params: {
           post: {
             title: new_post.title,
             description: new_post.description,
@@ -63,7 +63,7 @@ RSpec.describe 'PostsController', type: :request do
           }
         },
         headers: @auth_tokens
-    
+
     current_post = response_body['data']
 
     expect(response.status).to eq(200)
@@ -72,7 +72,7 @@ RSpec.describe 'PostsController', type: :request do
   end
 
   it 'publish a post' do
-    new_post = FactoryBot.create(:post)
+    new_post = create(:post)
 
     post publish_post_path(new_post.id), params: { post: { publish: true } }, headers: @auth_tokens
 
@@ -80,11 +80,11 @@ RSpec.describe 'PostsController', type: :request do
 
     expect(response.status).to eq(200)
     expect(response).to match_response_schema('post')
-    expect(current_post['attributes']['published']).to eq true
+    expect(current_post['attributes']['published']).to be true
   end
 
   it 'destroy a post' do
-    post_to_destroy = FactoryBot.create(:post)
+    post_to_destroy = create(:post)
 
     expect do
       delete post_path(post_to_destroy.id), headers: @auth_tokens

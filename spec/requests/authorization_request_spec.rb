@@ -8,13 +8,13 @@ RSpec.describe 'Authorization', type: :request do
   include ActionController::RespondWith
 
   before do
-    @current_user = FactoryBot.create(:user)
+    @current_user = create(:user)
   end
 
   it 'gives you an authentication code if you are an existing user and you satisfy the password' do
     login
 
-    expect(response.has_header?('access-token')).to eq(true)
+    expect(response.has_header?('access-token')).to be(true)
   end
 
   def login

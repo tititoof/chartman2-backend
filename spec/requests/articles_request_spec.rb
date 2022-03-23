@@ -6,9 +6,9 @@ RSpec.describe 'ArticlesController', type: :request do
   before do
     Faker::UniqueGenerator.clear
   end
-  
+
   it 'show articles from category' do
-    category = FactoryBot.create(:category)
+    category = create(:category)
 
     get "/articles/category/#{category.id}"
 
@@ -16,7 +16,7 @@ RSpec.describe 'ArticlesController', type: :request do
   end
 
   it 'show article' do
-    post = FactoryBot.create(:post)
+    post = create(:post)
 
     get "/article/#{post.id}"
 
@@ -25,7 +25,7 @@ RSpec.describe 'ArticlesController', type: :request do
   end
 
   it 'show category' do
-    category = FactoryBot.create(:category)
+    category = create(:category)
 
     get "/category/#{category.id}"
 
@@ -34,8 +34,8 @@ RSpec.describe 'ArticlesController', type: :request do
   end
 
   it 'show categories' do
-    2.times do 
-      category = FactoryBot.create(:category)
+    2.times do
+      category = create(:category)
     end
 
     get '/articles/categories'

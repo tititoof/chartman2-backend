@@ -14,9 +14,9 @@ module Articles
 
       articles = Post.from_category(category).published
 
-      OpenStruct.new({ success?: true, payload: articles, status: :ok })
+      { success?: true, payload: articles, status: :ok }
     rescue ActiveRecord::RecordNotFound => e
-      OpenStruct.new({ success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound })
+      { success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound }
     end
   end
 end

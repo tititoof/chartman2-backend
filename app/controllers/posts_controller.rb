@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   # list posts
   def index
-    @post = OpenStruct.new({ success?: true, payload: Post.all, status: :ok })
+    @post = { success?: true, payload: Post.all, status: :ok }
 
     render_json
   end

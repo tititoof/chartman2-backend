@@ -17,11 +17,11 @@ module Posts
       post.published_at = @publish ? Date.current : nil
       post.save!
 
-      OpenStruct.new({ success?: true, payload: post, status: :ok })
+      { success?: true, payload: post, status: :ok }
     rescue ActiveRecord::RecordNotFound => e
-      OpenStruct.new({ success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound })
+      { success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound }
     rescue ActiveRecord::RecordInvalid => e
-      OpenStruct.new({ success?: false, errors: e.record.errors, status: ActiveRecord::RecordInvalid })
+      { success?: false, errors: e.record.errors, status: ActiveRecord::RecordInvalid }
     end
   end
 end

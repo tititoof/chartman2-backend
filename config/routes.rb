@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :users
 
     # published a post
-    post '/post/publish/:id', to: 'posts#publish', :as => :publish_post
+    post '/post/publish/:id', to: 'posts#publish', as: :publish_post
 
     # Visitor's articles and categories
     get '/articles/category/:category_id', to: 'articles#from_category'

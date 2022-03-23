@@ -25,7 +25,7 @@ RSpec.describe Post, type: :model do
       published: true,
       published_at: '2020-12-01',
       user: User.new,
-      categories: [FactoryBot.create(:category)]
+      categories: [create(:category)]
     )
   end
 

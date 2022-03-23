@@ -22,11 +22,11 @@ module Posts
 
       post.save!
 
-      OpenStruct.new({ success?: true, payload: post, status: :ok })
+      { success?: true, payload: post, status: :ok }
     rescue ActiveRecord::RecordInvalid => e
-      OpenStruct.new({ success?: false, errors: e.record.errors, status: ActiveRecord::RecordInvalid })
+      { success?: false, errors: e.record.errors, status: ActiveRecord::RecordInvalid }
     rescue ActiveRecord::RecordNotFound => e
-      OpenStruct.new({ success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound })
+      { success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound }
     end
   end
 end

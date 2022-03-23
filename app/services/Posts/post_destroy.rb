@@ -15,9 +15,9 @@ module Posts
       post.articles.each(&:destroy)
       post.destroy
 
-      OpenStruct.new({ success?: true, payload: post, status: :ok })
+      { success?: true, payload: post, status: :ok }
     rescue ActiveRecord::RecordNotFound => e
-      OpenStruct.new({ success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound })
+      { success?: false, errors: e.record.errors, status: ActiveRecord::RecordNotFound }
     end
   end
 end

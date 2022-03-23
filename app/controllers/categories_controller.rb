@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
 
   # list all categories
   def index
-    @category = OpenStruct.new({ success?: true, payload: Category.all, status: :ok })
+    @category = { success?: true, payload: Category.all, status: :ok }
 
     render_json
   end

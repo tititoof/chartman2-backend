@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
 
   # show categories
   def categories
-    @data = OpenStruct.new({ success?: true, payload: Category.all, status: :ok })
+    @data = { success?: true, payload: Category.all, status: :ok }
 
     render_json CategorySerializer
   end

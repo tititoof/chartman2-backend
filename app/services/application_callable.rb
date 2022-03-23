@@ -2,7 +2,7 @@
 
 # Call service execute method
 class ApplicationCallable
-  def self.call(*args, &block)
-    new(*args, &block).execute
+  def self.call(*args, &)
+    new(*args, &).execute
   end
 end
