@@ -13,7 +13,7 @@ module Posts
       post = Post.find(@id)
 
       { success: true, payload: post, status: :ok }
-    rescue ActiveRecord::RecordNotFound => e
+    rescue ActiveRecord::RecordNotFound => _e
       { success: false, errors: 'record not found', status: ActiveRecord::RecordNotFound }
     end
   end

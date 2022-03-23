@@ -18,7 +18,7 @@ module Posts
       post.save!
 
       { success: true, payload: post, status: :ok }
-    rescue ActiveRecord::RecordNotFound => e
+    rescue ActiveRecord::RecordNotFound => _e
       { success: false, errors: 'record not found', status: ActiveRecord::RecordNotFound }
     rescue ActiveRecord::RecordInvalid => e
       { success: false, errors: e.record.errors, status: ActiveRecord::RecordInvalid }

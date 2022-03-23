@@ -16,7 +16,7 @@ module Posts
       post.destroy
 
       { success: true, payload: post, status: :ok }
-    rescue ActiveRecord::RecordNotFound => e
+    rescue ActiveRecord::RecordNotFound => _e
       { success: false, errors: 'record not found', status: ActiveRecord::RecordNotFound }
     end
   end

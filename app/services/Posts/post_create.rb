@@ -20,7 +20,7 @@ module Posts
       post.save!
 
       { success: true, payload: post, status: :ok }
-    rescue ActiveRecord::RecordInvalid => e
+    rescue ActiveRecord::RecordInvalid => _e
       { success: false, errors: 'invalid record', status: ActiveRecord::RecordInvalid }
     end
   end
