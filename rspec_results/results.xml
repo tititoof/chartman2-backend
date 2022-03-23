@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="37" skipped="0" failures="17" errors="0" time="11.567105" timestamp="2022-03-23T10:55:35+01:00" hostname="christophe-linux">
+<testsuite name="rspec" tests="37" skipped="0" failures="17" errors="0" time="11.605889" timestamp="2022-03-23T11:01:33+01:00" hostname="christophe-linux">
 <properties>
-<property name="seed" value="36904"/>
+<property name="seed" value="53571"/>
 </properties>
-<testcase classname="spec.models.article_spec" name="Article associations is expected to belong to category required: true" file="./spec/models/article_spec.rb" time="0.201880"></testcase>
-<testcase classname="spec.models.article_spec" name="Article associations is expected to belong to post required: true" file="./spec/models/article_spec.rb" time="0.013233"></testcase>
-<testcase classname="spec.models.category_spec" name="Category is valid with valid attributes" file="./spec/models/category_spec.rb" time="0.031239"></testcase>
-<testcase classname="spec.models.category_spec" name="Category is not valid without a name" file="./spec/models/category_spec.rb" time="0.014119"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is valid with attributes" file="./spec/models/post_spec.rb" time="0.098194"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is not valid without title" file="./spec/models/post_spec.rb" time="0.045163"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is not valid without content" file="./spec/models/post_spec.rb" time="0.045895"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is not valid without published" file="./spec/models/post_spec.rb" time="0.046710"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is not valid without published_at" file="./spec/models/post_spec.rb" time="0.049737"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is expected to belong to user required: true" file="./spec/models/post_spec.rb" time="0.046454"></testcase>
-<testcase classname="spec.models.post_spec" name="Post is expected to have many categories" file="./spec/models/post_spec.rb" time="0.029686"></testcase>
-<testcase classname="spec.models.user_spec" name="User is valid with valid attributes" file="./spec/models/user_spec.rb" time="0.223662"></testcase>
-<testcase classname="spec.models.user_spec" name="User is not valid without a name" file="./spec/models/user_spec.rb" time="0.223143"></testcase>
-<testcase classname="spec.models.user_spec" name="User is not valid without an email" file="./spec/models/user_spec.rb" time="0.216009"></testcase>
-<testcase classname="spec.models.user_spec" name="User is not valid without a password" file="./spec/models/user_spec.rb" time="0.222484"></testcase>
-<testcase classname="spec.models.user_spec" name="User is expected to allow :email to be ‹&quot;user@example.com&quot;›" file="./spec/models/user_spec.rb" time="0.221992"></testcase>
-<testcase classname="spec.models.user_spec" name="User is expected not to allow :email to be ‹&quot;not-an-email&quot;›" file="./spec/models/user_spec.rb" time="0.213248"></testcase>
-<testcase classname="spec.models.user_spec" name="User is expected to have many posts" file="./spec/models/user_spec.rb" time="0.217374"></testcase>
-<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show articles from category" file="./spec/requests/articles_request_spec.rb" time="0.071308"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.models.article_spec" name="Article associations is expected to belong to category required: true" file="./spec/models/article_spec.rb" time="0.226050"></testcase>
+<testcase classname="spec.models.article_spec" name="Article associations is expected to belong to post required: true" file="./spec/models/article_spec.rb" time="0.012798"></testcase>
+<testcase classname="spec.models.category_spec" name="Category is valid with valid attributes" file="./spec/models/category_spec.rb" time="0.035487"></testcase>
+<testcase classname="spec.models.category_spec" name="Category is not valid without a name" file="./spec/models/category_spec.rb" time="0.021502"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is valid with attributes" file="./spec/models/post_spec.rb" time="0.092724"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is not valid without title" file="./spec/models/post_spec.rb" time="0.044124"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is not valid without content" file="./spec/models/post_spec.rb" time="0.045322"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is not valid without published" file="./spec/models/post_spec.rb" time="0.044423"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is not valid without published_at" file="./spec/models/post_spec.rb" time="0.047587"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is expected to belong to user required: true" file="./spec/models/post_spec.rb" time="0.052185"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is expected to have many categories" file="./spec/models/post_spec.rb" time="0.030724"></testcase>
+<testcase classname="spec.models.user_spec" name="User is valid with valid attributes" file="./spec/models/user_spec.rb" time="0.224404"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without a name" file="./spec/models/user_spec.rb" time="0.214847"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without an email" file="./spec/models/user_spec.rb" time="0.223867"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without a password" file="./spec/models/user_spec.rb" time="0.215880"></testcase>
+<testcase classname="spec.models.user_spec" name="User is expected to allow :email to be ‹&quot;user@example.com&quot;›" file="./spec/models/user_spec.rb" time="0.215955"></testcase>
+<testcase classname="spec.models.user_spec" name="User is expected not to allow :email to be ‹&quot;not-an-email&quot;›" file="./spec/models/user_spec.rb" time="0.220413"></testcase>
+<testcase classname="spec.models.user_spec" name="User is expected to have many posts" file="./spec/models/user_spec.rb" time="0.206283"></testcase>
+<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show articles from category" file="./spec/requests/articles_request_spec.rb" time="0.079482"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
 
     if @data.success?
             ^^^^^^^^^" type="NoMethodError">Failure/Error: if @data.success?
@@ -50,13 +50,13 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/articles_request_spec.rb:13:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show article" file="./spec/requests/articles_request_spec.rb" time="0.291538"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;9df39829-36bc-4365-8a54-a25edb08140d&quot;, title: &quot;De Vermis Mysteriis&quot;, content: &quot;Effulgence squamous lurk cyclopean abnormal tenebr...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:38.407233000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:38.407233000 +0000&quot;, description: &quot;[\&quot;Manuscript comprehension spectral gambrel fungus...&quot;, user_id: &quot;22bd158d-e19c-4ea1-8128-f8112fdfe3dd&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show article" file="./spec/requests/articles_request_spec.rb" time="0.290951"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;7c74e001-b7cb-4a36-b437-209bc3199df2&quot;, title: &quot;Book of Eibon&quot;, content: &quot;Gibbering cyclopean gambrel non-euclidean eldritch...&quot;, published_at: &quot;2022-02-19 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 10:01:35.938240000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:35.938240000 +0000&quot;, description: &quot;[\&quot;Non-euclidean tenebrous decadent.\&quot;, \&quot;Shunned sty...&quot;, user_id: &quot;08b2d0cb-75dd-4786-b341-a517126e4204&quot;, published: true&gt;, :status=&gt;:ok}:Hash
 
     if @data.success?
             ^^^^^^^^^" type="NoMethodError">Failure/Error: if @data.success?
 
 NoMethodError:
-  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;9df39829-36bc-4365-8a54-a25edb08140d&quot;, title: &quot;De Vermis Mysteriis&quot;, content: &quot;Effulgence squamous lurk cyclopean abnormal tenebr...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:38.407233000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:38.407233000 +0000&quot;, description: &quot;[\&quot;Manuscript comprehension spectral gambrel fungus...&quot;, user_id: &quot;22bd158d-e19c-4ea1-8128-f8112fdfe3dd&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;7c74e001-b7cb-4a36-b437-209bc3199df2&quot;, title: &quot;Book of Eibon&quot;, content: &quot;Gibbering cyclopean gambrel non-euclidean eldritch...&quot;, published_at: &quot;2022-02-19 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 10:01:35.938240000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:35.938240000 +0000&quot;, description: &quot;[\&quot;Non-euclidean tenebrous decadent.\&quot;, \&quot;Shunned sty...&quot;, user_id: &quot;08b2d0cb-75dd-4786-b341-a517126e4204&quot;, published: true&gt;, :status=&gt;:ok}:Hash
 
       if @data.success?
               ^^^^^^^^^
@@ -79,13 +79,13 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/articles_request_spec.rb:21:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show category" file="./spec/requests/articles_request_spec.rb" time="0.043552"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;e9941a62-43bb-4f48-b4f4-dc645820fa06&quot;, name: &quot;The State of the Art&quot;, created_at: &quot;2022-03-23 09:55:38.468841000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:38.468841000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show category" file="./spec/requests/articles_request_spec.rb" time="0.043902"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;5264b0a4-182e-4f2e-9c01-feeaa8ffcf67&quot;, name: &quot;Matter&quot;, created_at: &quot;2022-03-23 10:01:35.994622000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:35.994622000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
 
     if @data.success?
             ^^^^^^^^^" type="NoMethodError">Failure/Error: if @data.success?
 
 NoMethodError:
-  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;e9941a62-43bb-4f48-b4f4-dc645820fa06&quot;, name: &quot;The State of the Art&quot;, created_at: &quot;2022-03-23 09:55:38.468841000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:38.468841000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;5264b0a4-182e-4f2e-9c01-feeaa8ffcf67&quot;, name: &quot;Matter&quot;, created_at: &quot;2022-03-23 10:01:35.994622000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:35.994622000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
 
       if @data.success?
               ^^^^^^^^^
@@ -108,7 +108,7 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/articles_request_spec.rb:30:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show categories" file="./spec/requests/articles_request_spec.rb" time="0.066609"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show categories" file="./spec/requests/articles_request_spec.rb" time="0.064946"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
 
     if @data.success?
             ^^^^^^^^^" type="NoMethodError">Failure/Error: if @data.success?
@@ -137,8 +137,8 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/articles_request_spec.rb:41:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.authorization_request_spec" name="Authorization gives you an authentication code if you are an existing user and you satisfy the password" file="./spec/requests/authorization_request_spec.rb" time="0.489759"></testcase>
-<testcase classname="spec.requests.categories_request_spec" name="CategoriesController get all categories" file="./spec/requests/categories_request_spec.rb" time="0.501373"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.authorization_request_spec" name="Authorization gives you an authentication code if you are an existing user and you satisfy the password" file="./spec/requests/authorization_request_spec.rb" time="0.488351"></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController get all categories" file="./spec/requests/categories_request_spec.rb" time="0.503714"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
 
     if @category.success?
                 ^^^^^^^^^" type="NoMethodError">Failure/Error: if @category.success?
@@ -167,13 +167,13 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/categories_request_spec.rb:19:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.categories_request_spec" name="CategoriesController create a category" file="./spec/requests/categories_request_spec.rb" time="0.501565"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;a5901b94-0ad9-43ce-803c-0fde77a41df3&quot;, name: &quot;test&quot;, created_at: &quot;2022-03-23 09:55:40.072331000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:40.072331000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController create a category" file="./spec/requests/categories_request_spec.rb" time="0.512754"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;b96cf0a9-11e7-4dc3-aa23-19f09749ee21&quot;, name: &quot;test&quot;, created_at: &quot;2022-03-23 10:01:37.606552000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:37.606552000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
 
     if @category.success?
                 ^^^^^^^^^" type="NoMethodError">Failure/Error: if @category.success?
 
 NoMethodError:
-  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;a5901b94-0ad9-43ce-803c-0fde77a41df3&quot;, name: &quot;test&quot;, created_at: &quot;2022-03-23 09:55:40.072331000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:40.072331000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;b96cf0a9-11e7-4dc3-aa23-19f09749ee21&quot;, name: &quot;test&quot;, created_at: &quot;2022-03-23 10:01:37.606552000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:37.606552000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
 
       if @category.success?
                   ^^^^^^^^^
@@ -196,7 +196,7 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/categories_request_spec.rb:27:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.categories_request_spec" name="CategoriesController cannot create a category with wrong parameter" file="./spec/requests/categories_request_spec.rb" time="0.512877"><failure message="undefined method `success?&apos; for {:success?=&gt;false, :errors=&gt;#&lt;ActiveModel::Errors [#&lt;ActiveModel::Error attribute=name, type=blank, options={}&gt;]&gt;, :status=&gt;ActiveRecord::RecordInvalid}:Hash
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController cannot create a category with wrong parameter" file="./spec/requests/categories_request_spec.rb" time="0.503127"><failure message="undefined method `success?&apos; for {:success?=&gt;false, :errors=&gt;#&lt;ActiveModel::Errors [#&lt;ActiveModel::Error attribute=name, type=blank, options={}&gt;]&gt;, :status=&gt;ActiveRecord::RecordInvalid}:Hash
 
     if @category.success?
                 ^^^^^^^^^" type="NoMethodError">Failure/Error: if @category.success?
@@ -225,13 +225,13 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/categories_request_spec.rb:36:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.categories_request_spec" name="CategoriesController show a category" file="./spec/requests/categories_request_spec.rb" time="0.514903"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;fdbe0cb9-6ae0-4f62-a574-e411c6f506e3&quot;, name: &quot;Excession&quot;, created_at: &quot;2022-03-23 09:55:41.092906000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:41.092906000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController show a category" file="./spec/requests/categories_request_spec.rb" time="0.512410"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;11261f7d-d2d8-4546-aec8-24451df70bb2&quot;, name: &quot;Inversions&quot;, created_at: &quot;2022-03-23 10:01:38.615661000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:38.615661000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
 
     if @category.success?
                 ^^^^^^^^^" type="NoMethodError">Failure/Error: if @category.success?
 
 NoMethodError:
-  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;fdbe0cb9-6ae0-4f62-a574-e411c6f506e3&quot;, name: &quot;Excession&quot;, created_at: &quot;2022-03-23 09:55:41.092906000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:41.092906000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;11261f7d-d2d8-4546-aec8-24451df70bb2&quot;, name: &quot;Inversions&quot;, created_at: &quot;2022-03-23 10:01:38.615661000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:38.615661000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
 
       if @category.success?
                   ^^^^^^^^^
@@ -254,13 +254,13 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/categories_request_spec.rb:44:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.categories_request_spec" name="CategoriesController update a category name" file="./spec/requests/categories_request_spec.rb" time="0.533797"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;f2c8994d-625b-473f-ab71-25970c5de25e&quot;, name: &quot;Consider Phlebas changed&quot;, created_at: &quot;2022-03-23 09:55:41.611303000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:41.644767000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController update a category name" file="./spec/requests/categories_request_spec.rb" time="0.524017"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;b91d2e2f-0963-4dee-8ea7-8b029cbd61a1&quot;, name: &quot;Use of Weapons changed&quot;, created_at: &quot;2022-03-23 10:01:39.116530000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:39.153485000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
 
     if @category.success?
                 ^^^^^^^^^" type="NoMethodError">Failure/Error: if @category.success?
 
 NoMethodError:
-  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;f2c8994d-625b-473f-ab71-25970c5de25e&quot;, name: &quot;Consider Phlebas changed&quot;, created_at: &quot;2022-03-23 09:55:41.611303000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:41.644767000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;b91d2e2f-0963-4dee-8ea7-8b029cbd61a1&quot;, name: &quot;Use of Weapons changed&quot;, created_at: &quot;2022-03-23 10:01:39.116530000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:39.153485000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
 
       if @category.success?
                   ^^^^^^^^^
@@ -283,13 +283,13 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/categories_request_spec.rb:54:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.categories_request_spec" name="CategoriesController destroy a category" file="./spec/requests/categories_request_spec.rb" time="0.518101"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;43ea7ca1-bdb7-45cf-a30f-08a855ec94cf&quot;, name: &quot;Consider Phlebas&quot;, created_at: &quot;2022-03-23 09:55:42.136051000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:42.136051000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController destroy a category" file="./spec/requests/categories_request_spec.rb" time="0.527195"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;28390dc4-a55a-4111-9f1b-98b76c964fa6&quot;, name: &quot;The Hydrogen Sonata&quot;, created_at: &quot;2022-03-23 10:01:39.650650000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:39.650650000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
 
     if @category.success?
                 ^^^^^^^^^" type="NoMethodError">Failure/Error: if @category.success?
 
 NoMethodError:
-  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;43ea7ca1-bdb7-45cf-a30f-08a855ec94cf&quot;, name: &quot;Consider Phlebas&quot;, created_at: &quot;2022-03-23 09:55:42.136051000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:42.136051000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Category id: &quot;28390dc4-a55a-4111-9f1b-98b76c964fa6&quot;, name: &quot;The Hydrogen Sonata&quot;, created_at: &quot;2022-03-23 10:01:39.650650000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:39.650650000 +0000&quot;&gt;, :status=&gt;:ok}:Hash
 
       if @category.success?
                   ^^^^^^^^^
@@ -313,7 +313,7 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/categories_request_spec.rb:67:in `block (3 levels) in &lt;main&gt;&apos;
 ./spec/requests/categories_request_spec.rb:66:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController get all posts from index" file="./spec/requests/posts_request_spec.rb" time="0.505221"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.posts_request_spec" name="PostsController get all posts from index" file="./spec/requests/posts_request_spec.rb" time="0.511219"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;ActiveRecord::Relation []&gt;, :status=&gt;:ok}:Hash
 
     if @post.success?
             ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
@@ -342,13 +342,13 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/posts_request_spec.rb:19:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController create a post" file="./spec/requests/posts_request_spec.rb" time="0.585592"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;8146ee71-cd22-4274-997a-a3cd362a3b2b&quot;, title: &quot;test&quot;, content: &quot;gnagnagna&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:43.237058000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:43.237058000 +0000&quot;, description: &quot;petite description&quot;, user_id: &quot;5fcaf280-ce44-4b75-8c1f-b4acd18e35e8&quot;, published: nil&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.posts_request_spec" name="PostsController create a post" file="./spec/requests/posts_request_spec.rb" time="0.565865"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;53dea90a-a284-4db2-800d-ae1a37eee0e6&quot;, title: &quot;test&quot;, content: &quot;gnagnagna&quot;, published_at: nil, created_at: &quot;2022-03-23 10:01:40.746468000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:40.746468000 +0000&quot;, description: &quot;petite description&quot;, user_id: &quot;3351a8d9-8935-4ea3-b827-e8d55fd86c22&quot;, published: nil&gt;, :status=&gt;:ok}:Hash
 
     if @post.success?
             ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
 
 NoMethodError:
-  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;8146ee71-cd22-4274-997a-a3cd362a3b2b&quot;, title: &quot;test&quot;, content: &quot;gnagnagna&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:43.237058000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:43.237058000 +0000&quot;, description: &quot;petite description&quot;, user_id: &quot;5fcaf280-ce44-4b75-8c1f-b4acd18e35e8&quot;, published: nil&gt;, :status=&gt;:ok}:Hash
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;53dea90a-a284-4db2-800d-ae1a37eee0e6&quot;, title: &quot;test&quot;, content: &quot;gnagnagna&quot;, published_at: nil, created_at: &quot;2022-03-23 10:01:40.746468000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:40.746468000 +0000&quot;, description: &quot;petite description&quot;, user_id: &quot;3351a8d9-8935-4ea3-b827-e8d55fd86c22&quot;, published: nil&gt;, :status=&gt;:ok}:Hash
 
       if @post.success?
               ^^^^^^^^^
@@ -371,7 +371,7 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/posts_request_spec.rb:28:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController not create with wrong parameter" file="./spec/requests/posts_request_spec.rb" time="0.516810"><failure message="undefined method `success?&apos; for {:success?=&gt;false, :errors=&gt;#&lt;ActiveModel::Errors [#&lt;ActiveModel::Error attribute=description, type=blank, options={}&gt;]&gt;, :status=&gt;ActiveRecord::RecordInvalid}:Hash
+<testcase classname="spec.requests.posts_request_spec" name="PostsController not create with wrong parameter" file="./spec/requests/posts_request_spec.rb" time="0.524107"><failure message="undefined method `success?&apos; for {:success?=&gt;false, :errors=&gt;#&lt;ActiveModel::Errors [#&lt;ActiveModel::Error attribute=description, type=blank, options={}&gt;]&gt;, :status=&gt;ActiveRecord::RecordInvalid}:Hash
 
     if @post.success?
             ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
@@ -400,13 +400,13 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/posts_request_spec.rb:38:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController show a post" file="./spec/requests/posts_request_spec.rb" time="0.753876"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;c7e13449-67aa-4396-95cf-68ce45742423&quot;, title: &quot;Eltdown Shards&quot;, content: &quot;Madness iridescence fungus ululate fainted cyclope...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:44.530012000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:44.530012000 +0000&quot;, description: &quot;[\&quot;Dank gibbering swarthy iridescence ululate amorp...&quot;, user_id: &quot;809f5ff8-9193-475e-bac7-0e153fc1051c&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.posts_request_spec" name="PostsController show a post" file="./spec/requests/posts_request_spec.rb" time="0.772135"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;420ba5e9-547b-49d7-b202-e977eb3c91f5&quot;, title: &quot;Necronomicon&quot;, content: &quot;Mortal gambrel ululate gibbering antediluvian non-...&quot;, published_at: &quot;2022-02-23 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 10:01:42.072844000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:42.072844000 +0000&quot;, description: &quot;[\&quot;Gambrel unutterable daemoniac iridescence furtiv...&quot;, user_id: &quot;744528f1-f685-4133-93e5-d3162606c1b0&quot;, published: true&gt;, :status=&gt;:ok}:Hash
 
     if @post.success?
             ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
 
 NoMethodError:
-  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;c7e13449-67aa-4396-95cf-68ce45742423&quot;, title: &quot;Eltdown Shards&quot;, content: &quot;Madness iridescence fungus ululate fainted cyclope...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:44.530012000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:44.530012000 +0000&quot;, description: &quot;[\&quot;Dank gibbering swarthy iridescence ululate amorp...&quot;, user_id: &quot;809f5ff8-9193-475e-bac7-0e153fc1051c&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;420ba5e9-547b-49d7-b202-e977eb3c91f5&quot;, title: &quot;Necronomicon&quot;, content: &quot;Mortal gambrel ululate gibbering antediluvian non-...&quot;, published_at: &quot;2022-02-23 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 10:01:42.072844000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:42.072844000 +0000&quot;, description: &quot;[\&quot;Gambrel unutterable daemoniac iridescence furtiv...&quot;, user_id: &quot;744528f1-f685-4133-93e5-d3162606c1b0&quot;, published: true&gt;, :status=&gt;:ok}:Hash
 
       if @post.success?
               ^^^^^^^^^
@@ -429,13 +429,13 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/posts_request_spec.rb:46:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController update a post" file="./spec/requests/posts_request_spec.rb" time="0.800823"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;0ec3e6fb-5c74-4f11-8fc4-eb8fa0e1f540&quot;, title: &quot;De Vermis Mysteriis changed&quot;, content: &quot;Stygian daemoniac tentacles mortal. Charnel unutte...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:45.283212000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:45.337206000 +0000&quot;, description: &quot;[\&quot;Hideous amorphous effulgence tentacles abnormal ...&quot;, user_id: &quot;3ade2a75-de3f-47e1-a0ef-c1032aed6832&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.posts_request_spec" name="PostsController update a post" file="./spec/requests/posts_request_spec.rb" time="0.810041"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;e37e900c-4c46-4bee-a61d-6c41434856eb&quot;, title: &quot;Book of Eibon changed&quot;, content: &quot;Dank eldritch decadent fungus antediluvian gibberi...&quot;, published_at: &quot;2022-02-24 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 10:01:42.837545000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:42.890471000 +0000&quot;, description: &quot;[\&quot;Gambrel madness comprehension unnamable antiquar...&quot;, user_id: &quot;c74a9f7f-590a-4f70-9e5b-13a988e4f991&quot;, published: true&gt;, :status=&gt;:ok}:Hash
 
     if @post.success?
             ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
 
 NoMethodError:
-  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;0ec3e6fb-5c74-4f11-8fc4-eb8fa0e1f540&quot;, title: &quot;De Vermis Mysteriis changed&quot;, content: &quot;Stygian daemoniac tentacles mortal. Charnel unutte...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:45.283212000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:45.337206000 +0000&quot;, description: &quot;[\&quot;Hideous amorphous effulgence tentacles abnormal ...&quot;, user_id: &quot;3ade2a75-de3f-47e1-a0ef-c1032aed6832&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;e37e900c-4c46-4bee-a61d-6c41434856eb&quot;, title: &quot;Book of Eibon changed&quot;, content: &quot;Dank eldritch decadent fungus antediluvian gibberi...&quot;, published_at: &quot;2022-02-24 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 10:01:42.837545000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:42.890471000 +0000&quot;, description: &quot;[\&quot;Gambrel madness comprehension unnamable antiquar...&quot;, user_id: &quot;c74a9f7f-590a-4f70-9e5b-13a988e4f991&quot;, published: true&gt;, :status=&gt;:ok}:Hash
 
       if @post.success?
               ^^^^^^^^^
@@ -458,13 +458,13 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/posts_request_spec.rb:56:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController publish a post" file="./spec/requests/posts_request_spec.rb" time="0.794903"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;6144f552-b14a-40d6-8ab1-0f2fdadb9e49&quot;, title: &quot;De Vermis Mysteriis&quot;, content: &quot;Furtive foetid daemoniac tenebrous nameless swarth...&quot;, published_at: &quot;2022-03-23 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 09:55:46.097240000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:46.150991000 +0000&quot;, description: &quot;[\&quot;Blasphemous indescribable gibbering furtive nois...&quot;, user_id: &quot;06a76645-0fd8-4be4-8d8e-c7e6c6cbf4e0&quot;, published: true&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.posts_request_spec" name="PostsController publish a post" file="./spec/requests/posts_request_spec.rb" time="0.791818"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;16da1db5-6451-47b4-8895-c5ffc6aa6bf8&quot;, title: &quot;Book of Eibon&quot;, content: &quot;Spectral indescribable daemoniac. Hideous ululate ...&quot;, published_at: &quot;2022-03-23 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 10:01:43.634714000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:43.699241000 +0000&quot;, description: &quot;[\&quot;Iridescence eldritch swarthy charnel antiquarian...&quot;, user_id: &quot;e8a4fc93-eec2-4ab6-86ff-35f495474e55&quot;, published: true&gt;, :status=&gt;:ok}:Hash
 
     if @post.success?
             ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
 
 NoMethodError:
-  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;6144f552-b14a-40d6-8ab1-0f2fdadb9e49&quot;, title: &quot;De Vermis Mysteriis&quot;, content: &quot;Furtive foetid daemoniac tenebrous nameless swarth...&quot;, published_at: &quot;2022-03-23 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 09:55:46.097240000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:46.150991000 +0000&quot;, description: &quot;[\&quot;Blasphemous indescribable gibbering furtive nois...&quot;, user_id: &quot;06a76645-0fd8-4be4-8d8e-c7e6c6cbf4e0&quot;, published: true&gt;, :status=&gt;:ok}:Hash
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;16da1db5-6451-47b4-8895-c5ffc6aa6bf8&quot;, title: &quot;Book of Eibon&quot;, content: &quot;Spectral indescribable daemoniac. Hideous ululate ...&quot;, published_at: &quot;2022-03-23 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 10:01:43.634714000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:43.699241000 +0000&quot;, description: &quot;[\&quot;Iridescence eldritch swarthy charnel antiquarian...&quot;, user_id: &quot;e8a4fc93-eec2-4ab6-86ff-35f495474e55&quot;, published: true&gt;, :status=&gt;:ok}:Hash
 
       if @post.success?
               ^^^^^^^^^
@@ -487,13 +487,13 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/posts_request_spec.rb:77:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.posts_request_spec" name="PostsController destroy a post" file="./spec/requests/posts_request_spec.rb" time="0.794676"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;d6842396-ae8a-4ea7-991a-30f5dc9f0d99&quot;, title: &quot;Book of Eibon&quot;, content: &quot;Unutterable fainted tenebrous. Unutterable accurse...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:46.890669000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:46.890669000 +0000&quot;, description: &quot;[\&quot;Daemoniac antiquarian eldritch.\&quot;, \&quot;Stygian tenta...&quot;, user_id: &quot;43ddf1b1-da5c-45e8-bccc-1b7d43d597b1&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+<testcase classname="spec.requests.posts_request_spec" name="PostsController destroy a post" file="./spec/requests/posts_request_spec.rb" time="0.795071"><failure message="undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;88a3e0ef-8dda-43f8-8f58-592b6b9bf301&quot;, title: &quot;Pnakotic Manuscripts&quot;, content: &quot;Loathsome daemoniac gibbering manuscript indescrib...&quot;, published_at: &quot;2022-03-14 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 10:01:44.437334000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:44.437334000 +0000&quot;, description: &quot;[\&quot;Squamous foetid unutterable stench blasphemous f...&quot;, user_id: &quot;4cc954d0-cbfd-430a-937f-bf5f499a9556&quot;, published: true&gt;, :status=&gt;:ok}:Hash
 
     if @post.success?
             ^^^^^^^^^" type="NoMethodError">Failure/Error: if @post.success?
 
 NoMethodError:
-  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;d6842396-ae8a-4ea7-991a-30f5dc9f0d99&quot;, title: &quot;Book of Eibon&quot;, content: &quot;Unutterable fainted tenebrous. Unutterable accurse...&quot;, published_at: nil, created_at: &quot;2022-03-23 09:55:46.890669000 +0000&quot;, updated_at: &quot;2022-03-23 09:55:46.890669000 +0000&quot;, description: &quot;[\&quot;Daemoniac antiquarian eldritch.\&quot;, \&quot;Stygian tenta...&quot;, user_id: &quot;43ddf1b1-da5c-45e8-bccc-1b7d43d597b1&quot;, published: false&gt;, :status=&gt;:ok}:Hash
+  undefined method `success?&apos; for {:success?=&gt;true, :payload=&gt;#&lt;Post id: &quot;88a3e0ef-8dda-43f8-8f58-592b6b9bf301&quot;, title: &quot;Pnakotic Manuscripts&quot;, content: &quot;Loathsome daemoniac gibbering manuscript indescrib...&quot;, published_at: &quot;2022-03-14 00:00:00.000000000 +0000&quot;, created_at: &quot;2022-03-23 10:01:44.437334000 +0000&quot;, updated_at: &quot;2022-03-23 10:01:44.437334000 +0000&quot;, description: &quot;[\&quot;Squamous foetid unutterable stench blasphemous f...&quot;, user_id: &quot;4cc954d0-cbfd-430a-937f-bf5f499a9556&quot;, published: true&gt;, :status=&gt;:ok}:Hash
 
       if @post.success?
               ^^^^^^^^^
@@ -517,5 +517,5 @@ NoMethodError:
 /usr/share/rvm/gems/ruby-3.1.1/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
 ./spec/requests/posts_request_spec.rb:90:in `block (3 levels) in &lt;main&gt;&apos;
 ./spec/requests/posts_request_spec.rb:89:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.requests.users_request_spec" name="UsersController show current user" file="./spec/requests/users_request_spec.rb" time="0.482976"></testcase>
+<testcase classname="spec.requests.users_request_spec" name="UsersController show current user" file="./spec/requests/users_request_spec.rb" time="0.488409"></testcase>
 </testsuite>
