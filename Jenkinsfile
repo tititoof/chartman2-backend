@@ -28,7 +28,7 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'chartman2-test-key', variable: 'TEST_CREDENTIALS')]) {
                         try {
-                            sh('''
+                            sh'''
                                 . ~/.rvm/scripts/rvm &> /dev/null
                                 rvm use ruby-3.1.1
                                 gem cleanup
@@ -39,7 +39,7 @@ pipeline {
                                 RAILS_ENV=test bundle exec rake db:migrate
                                 PARALLEL_WORKERS=4 RAILS_ENV=test bundle exec rspec
                                 ruby -rjson -e 'sqube = JSON.load(File.read("coverage/.resultset.json"))["RSpec"]["coverage"].transform_values {|lines| lines["lines"]}; total = { "RSpec" => { "coverage" => sqube, "timestamp" => Time.now.to_i }}; puts JSON.dump(total)' > coverage/.resultset.solarqube.json
-                            ''')
+                            '''
                         } catch (err) {
                             echo "Rspec error "
                             echo err.getMessage()
@@ -55,7 +55,7 @@ pipeline {
                             echo err.getMessage()
                         }
                         sh '''
-                            bundle exec brakeman -A -q --color -o /dev/stdout -o brakeman.json()
+                            bundle exec brakeman -A -q --color -o /dev/stdout -o brakeman.json
                         '''
                         
                         echo 'Finished tests!'
