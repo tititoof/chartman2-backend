@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="5" skipped="0" failures="0" errors="0" time="1.761382" timestamp="2020-12-21T19:02:05+01:00" hostname="tititoof.lan">
+<testsuite name="rspec" tests="37" skipped="0" failures="0" errors="0" time="11.657624" timestamp="2022-03-23T10:36:01+01:00" hostname="christophe-linux">
 <properties>
-<property name="seed" value="35204"/>
+<property name="seed" value="16438"/>
 </properties>
-<testcase classname="spec.models.user_spec" name="User is valid with valid attributes" file="./spec/models/user_spec.rb" time="0.277267"></testcase>
-<testcase classname="spec.models.user_spec" name="User is not valid without a name" file="./spec/models/user_spec.rb" time="0.467613"></testcase>
-<testcase classname="spec.models.user_spec" name="User is not valid without an email" file="./spec/models/user_spec.rb" time="0.221820"></testcase>
-<testcase classname="spec.models.user_spec" name="User is not valid without a password" file="./spec/models/user_spec.rb" time="0.229859"></testcase>
-<testcase classname="spec.requests.authorization_request_spec" name="Authorization gives you an authentication code if you are an existing user and you satisfy the password" file="./spec/requests/authorization_request_spec.rb" time="0.560376"></testcase>
+<testcase classname="spec.models.article_spec" name="Article associations is expected to belong to category required: true" file="./spec/models/article_spec.rb" time="0.182380"></testcase>
+<testcase classname="spec.models.article_spec" name="Article associations is expected to belong to post required: true" file="./spec/models/article_spec.rb" time="0.012089"></testcase>
+<testcase classname="spec.models.category_spec" name="Category is valid with valid attributes" file="./spec/models/category_spec.rb" time="0.028995"></testcase>
+<testcase classname="spec.models.category_spec" name="Category is not valid without a name" file="./spec/models/category_spec.rb" time="0.016659"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is valid with attributes" file="./spec/models/post_spec.rb" time="0.103398"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is not valid without title" file="./spec/models/post_spec.rb" time="0.041844"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is not valid without content" file="./spec/models/post_spec.rb" time="0.042692"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is not valid without published" file="./spec/models/post_spec.rb" time="0.043299"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is not valid without published_at" file="./spec/models/post_spec.rb" time="0.044703"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is expected to belong to user required: true" file="./spec/models/post_spec.rb" time="0.047136"></testcase>
+<testcase classname="spec.models.post_spec" name="Post is expected to have many categories" file="./spec/models/post_spec.rb" time="0.027414"></testcase>
+<testcase classname="spec.models.user_spec" name="User is valid with valid attributes" file="./spec/models/user_spec.rb" time="0.224421"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without a name" file="./spec/models/user_spec.rb" time="0.225917"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without an email" file="./spec/models/user_spec.rb" time="0.212467"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without a password" file="./spec/models/user_spec.rb" time="0.218821"></testcase>
+<testcase classname="spec.models.user_spec" name="User is expected to allow :email to be ‹&quot;user@example.com&quot;›" file="./spec/models/user_spec.rb" time="0.215619"></testcase>
+<testcase classname="spec.models.user_spec" name="User is expected not to allow :email to be ‹&quot;not-an-email&quot;›" file="./spec/models/user_spec.rb" time="0.217009"></testcase>
+<testcase classname="spec.models.user_spec" name="User is expected to have many posts" file="./spec/models/user_spec.rb" time="0.210586"></testcase>
+<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show articles from category" file="./spec/requests/articles_request_spec.rb" time="0.068564"></testcase>
+<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show article" file="./spec/requests/articles_request_spec.rb" time="0.318161"></testcase>
+<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show category" file="./spec/requests/articles_request_spec.rb" time="0.052945"></testcase>
+<testcase classname="spec.requests.articles_request_spec" name="ArticlesController show categories" file="./spec/requests/articles_request_spec.rb" time="0.065995"></testcase>
+<testcase classname="spec.requests.authorization_request_spec" name="Authorization gives you an authentication code if you are an existing user and you satisfy the password" file="./spec/requests/authorization_request_spec.rb" time="0.504739"></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController get all categories" file="./spec/requests/categories_request_spec.rb" time="0.513490"></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController create a category" file="./spec/requests/categories_request_spec.rb" time="0.515952"></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController cannot create a category with wrong parameter" file="./spec/requests/categories_request_spec.rb" time="0.518456"></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController show a category" file="./spec/requests/categories_request_spec.rb" time="0.537451"></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController update a category name" file="./spec/requests/categories_request_spec.rb" time="0.540996"></testcase>
+<testcase classname="spec.requests.categories_request_spec" name="CategoriesController destroy a category" file="./spec/requests/categories_request_spec.rb" time="0.549369"></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController get all posts from index" file="./spec/requests/posts_request_spec.rb" time="0.497945"></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController create a post" file="./spec/requests/posts_request_spec.rb" time="0.563076"></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController not create with wrong parameter" file="./spec/requests/posts_request_spec.rb" time="0.546687"></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController show a post" file="./spec/requests/posts_request_spec.rb" time="0.789232"></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController update a post" file="./spec/requests/posts_request_spec.rb" time="0.821971"></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController publish a post" file="./spec/requests/posts_request_spec.rb" time="0.809691"></testcase>
+<testcase classname="spec.requests.posts_request_spec" name="PostsController destroy a post" file="./spec/requests/posts_request_spec.rb" time="0.815677"></testcase>
+<testcase classname="spec.requests.users_request_spec" name="UsersController show current user" file="./spec/requests/users_request_spec.rb" time="0.490445"></testcase>
 </testsuite>

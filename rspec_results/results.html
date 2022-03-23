@@ -281,26 +281,130 @@ a {
 <div class="results">
 <div id="div_group_1" class="example_group passed">
   <dl style="margin-left: 0px;">
-  <dt id="example_group_1" class="passed">User</dt>
-    <script type="text/javascript">moveProgressBar('20.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">is valid with valid attributes</span><span class='duration'>0.27727s</span></dd>
-    <script type="text/javascript">moveProgressBar('40.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">is not valid without a name</span><span class='duration'>0.46761s</span></dd>
-    <script type="text/javascript">moveProgressBar('60.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">is not valid without an email</span><span class='duration'>0.22182s</span></dd>
-    <script type="text/javascript">moveProgressBar('80.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">is not valid without a password</span><span class='duration'>0.22986s</span></dd>
+  <dt id="example_group_1" class="passed">Article</dt>
   </dl>
 </div>
 <div id="div_group_2" class="example_group passed">
-  <dl style="margin-left: 0px;">
-  <dt id="example_group_2" class="passed">Authorization</dt>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">gives you an authentication code if you are an existing user and you satisfy the password</span><span class='duration'>0.56038s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_2" class="passed">associations</dt>
+    <script type="text/javascript">moveProgressBar('2.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">is expected to belong to category required: true</span><span class='duration'>0.18238s</span></dd>
+    <script type="text/javascript">moveProgressBar('5.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">is expected to belong to post required: true</span><span class='duration'>0.01209s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>1.76138 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "5 examples, 0 failures";</script>
+<div id="div_group_3" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_3" class="passed">Category</dt>
+    <script type="text/javascript">moveProgressBar('8.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">is valid with valid attributes</span><span class='duration'>0.02900s</span></dd>
+    <script type="text/javascript">moveProgressBar('10.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">is not valid without a name</span><span class='duration'>0.01666s</span></dd>
+  </dl>
+</div>
+<div id="div_group_4" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_4" class="passed">Post</dt>
+    <script type="text/javascript">moveProgressBar('13.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">is valid with attributes</span><span class='duration'>0.10340s</span></dd>
+    <script type="text/javascript">moveProgressBar('16.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">is not valid without title</span><span class='duration'>0.04184s</span></dd>
+    <script type="text/javascript">moveProgressBar('18.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">is not valid without content</span><span class='duration'>0.04269s</span></dd>
+    <script type="text/javascript">moveProgressBar('21.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">is not valid without published</span><span class='duration'>0.04330s</span></dd>
+    <script type="text/javascript">moveProgressBar('24.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">is not valid without published_at</span><span class='duration'>0.04470s</span></dd>
+    <script type="text/javascript">moveProgressBar('27.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">is expected to belong to user required: true</span><span class='duration'>0.04714s</span></dd>
+    <script type="text/javascript">moveProgressBar('29.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">is expected to have many categories</span><span class='duration'>0.02741s</span></dd>
+  </dl>
+</div>
+<div id="div_group_5" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_5" class="passed">User</dt>
+    <script type="text/javascript">moveProgressBar('32.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">is valid with valid attributes</span><span class='duration'>0.22442s</span></dd>
+    <script type="text/javascript">moveProgressBar('35.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">is not valid without a name</span><span class='duration'>0.22592s</span></dd>
+    <script type="text/javascript">moveProgressBar('37.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">is not valid without an email</span><span class='duration'>0.21247s</span></dd>
+    <script type="text/javascript">moveProgressBar('40.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">is not valid without a password</span><span class='duration'>0.21882s</span></dd>
+    <script type="text/javascript">moveProgressBar('43.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">is expected to allow :email to be ‹&quot;user@example.com&quot;›</span><span class='duration'>0.21562s</span></dd>
+    <script type="text/javascript">moveProgressBar('45.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">is expected not to allow :email to be ‹&quot;not-an-email&quot;›</span><span class='duration'>0.21701s</span></dd>
+    <script type="text/javascript">moveProgressBar('48.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">is expected to have many posts</span><span class='duration'>0.21059s</span></dd>
+  </dl>
+</div>
+<div id="div_group_6" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_6" class="passed">ArticlesController</dt>
+    <script type="text/javascript">moveProgressBar('51.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">show articles from category</span><span class='duration'>0.06856s</span></dd>
+    <script type="text/javascript">moveProgressBar('54.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">show article</span><span class='duration'>0.31816s</span></dd>
+    <script type="text/javascript">moveProgressBar('56.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">show category</span><span class='duration'>0.05294s</span></dd>
+    <script type="text/javascript">moveProgressBar('59.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">show categories</span><span class='duration'>0.06599s</span></dd>
+  </dl>
+</div>
+<div id="div_group_7" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_7" class="passed">Authorization</dt>
+    <script type="text/javascript">moveProgressBar('62.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">gives you an authentication code if you are an existing user and you satisfy the password</span><span class='duration'>0.50474s</span></dd>
+  </dl>
+</div>
+<div id="div_group_8" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_8" class="passed">CategoriesController</dt>
+    <script type="text/javascript">moveProgressBar('64.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">get all categories</span><span class='duration'>0.51349s</span></dd>
+    <script type="text/javascript">moveProgressBar('67.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">create a category</span><span class='duration'>0.51595s</span></dd>
+    <script type="text/javascript">moveProgressBar('70.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">cannot create a category with wrong parameter</span><span class='duration'>0.51846s</span></dd>
+    <script type="text/javascript">moveProgressBar('72.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">show a category</span><span class='duration'>0.53745s</span></dd>
+    <script type="text/javascript">moveProgressBar('75.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">update a category name</span><span class='duration'>0.54100s</span></dd>
+    <script type="text/javascript">moveProgressBar('78.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">destroy a category</span><span class='duration'>0.54937s</span></dd>
+  </dl>
+</div>
+<div id="div_group_9" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_9" class="passed">PostsController</dt>
+    <script type="text/javascript">moveProgressBar('81.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">get all posts from index</span><span class='duration'>0.49794s</span></dd>
+    <script type="text/javascript">moveProgressBar('83.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">create a post</span><span class='duration'>0.56308s</span></dd>
+    <script type="text/javascript">moveProgressBar('86.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">not create with wrong parameter</span><span class='duration'>0.54669s</span></dd>
+    <script type="text/javascript">moveProgressBar('89.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">show a post</span><span class='duration'>0.78923s</span></dd>
+    <script type="text/javascript">moveProgressBar('91.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">update a post</span><span class='duration'>0.82197s</span></dd>
+    <script type="text/javascript">moveProgressBar('94.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">publish a post</span><span class='duration'>0.80969s</span></dd>
+    <script type="text/javascript">moveProgressBar('97.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">destroy a post</span><span class='duration'>0.81568s</span></dd>
+  </dl>
+</div>
+<div id="div_group_10" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_10" class="passed">UsersController</dt>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">show current user</span><span class='duration'>0.49045s</span></dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>11.65762 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "37 examples, 0 failures";</script>
 </div>
 </div>
 </body>
