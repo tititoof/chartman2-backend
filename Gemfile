@@ -30,7 +30,7 @@ gem 'rack-cors'
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
 # Code coverage
-gem 'simplecov', git: 'https://github.com/simplecov-ruby/simplecov', require: false, group: :test
+gem 'simplecov', require: false, group: :test
 gem 'simplecov-json', :require => false, :group => :test
 gem 'parallel_tests', group: [:development, :test]
 # Authenticate

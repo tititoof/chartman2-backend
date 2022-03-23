@@ -35,7 +35,6 @@
 
 /config/deploy/production.rb
 
-coverage
 rspec_results
 .scannerwork/
 .vscode/

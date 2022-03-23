@@ -3,13 +3,10 @@
 require 'simplecov'
 require 'simplecov-json'
 
-if ENV['RAILS_ENV'] == 'test'
-  SimpleCov.start 'rails' do
-    SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
-    add_filter 'test'
-  end
-  puts "required simplecov"
+SimpleCov.start 'rails' do
+  SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
 end
+puts "required simplecov"
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
