@@ -30,9 +30,10 @@ gem 'rack-cors'
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
 # Code coverage
+gem 'parallel_tests', group: %i[development test]
 gem 'simplecov', require: false, group: :test
-gem 'simplecov-json', :require => false, :group => :test
-gem 'parallel_tests', group: [:development, :test]
+gem 'simplecov-json', require: false, group: :test
+
 # Authenticate
 gem 'devise'
 gem 'devise_token_auth', '>= 1.2.0', git: 'https://github.com/lynndylanhurley/devise_token_auth'
@@ -42,6 +43,9 @@ gem 'jsonapi-serializer'
 
 # multi_json
 gem 'multi_json', '~> 1.11', '>= 1.11.2'
+
+# Mailjet
+gem 'mailjet'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

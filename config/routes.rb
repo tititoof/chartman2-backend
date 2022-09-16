@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :users
 
-    # published a post
+    # publish a post
     post '/post/publish/:id', to: 'posts#publish', as: :publish_post
 
     # Visitor's articles and categories
@@ -17,5 +17,8 @@ Rails.application.routes.draw do
     get '/article/:article_id', to: 'articles#show'
     get '/articles/categories', to: 'articles#categories'
     get '/category/:category_id', to: 'articles#category'
+
+    # Send email
+    post '/contacts/send', to: 'contacts#create'
   end
 end
