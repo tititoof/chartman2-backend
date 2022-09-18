@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # config valid for current version and patch releases of Capistrano
-lock '~> 3.16.0'
+lock '~> 3.17.1'
 
 set :application, 'chartman2.fr'
 
@@ -57,7 +57,8 @@ set :assets_roles, %i[web app]
 
 set :assets_prefix, 'prepackaged-assets'
 
-# Defaults to ["/path/to/release_path/public/#{fetch(:assets_prefix)}/.sprockets-manifest*", "/path/to/release_path/public/#{fetch(:assets_prefix)}/manifest*.*"]
+# Defaults to ["/path/to/release_path/public/#{fetch(:assets_prefix)}/.sprockets-manifest*",
+# "/path/to/release_path/public/#{fetch(:assets_prefix)}/manifest*.*"]
 # This should match config.assets.manifest in your rails config/application.rb
 set :assets_manifests, ['app/assets/config/manifest.js']
 
