@@ -41,3 +41,5 @@ rspec_results
 sorbet/
 
 /config/credentials/production.key
+
+/config/deploy.rb
