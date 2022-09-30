@@ -2,7 +2,7 @@
 
 # Send email to administrator
 class UserMailer < ApplicationMailer
-  default from: 'chartman2.fr@gmail.com'
+  default from: 'no-reply@chartman2.fr'
 
   def contact_email
     @name = params[:name]
